@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Flavor House · Caribbean, Creole & Cocktail Culture in Dayton</title>
+<meta name="description" content="An upscale Caribbean and Creole kitchen, cocktail lounge, and private event space in the heart of downtown Dayton. Scratch cooking, spice, and second helpings since 2021.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     THE FLAVOR HOUSE · CONCEPT 1: "AFTER DARK"
+     Dark, cinematic supper club / cocktail lounge
+     ============================================================ */
+
+  :root{
+    /* Base */
+    --espresso:   #0d0a07;
+    --char-1:     #17120c;
+    --char-2:     #1e1710;
+    --char-3:     #241c14;
+    /* Metals + accent */
+    --brass:      #c79a4b;
+    --gold-hi:    #e6b95c;
+    --ember:      #c0472b;
+    /* Text */
+    --cream:      #efe6d6;
+    --taupe:      #a99b83;
+    --taupe-dim:  #7d7261;
+    /* Hairlines */
+    --line:       rgba(199,154,75,0.28);
+    --line-soft:  rgba(199,154,75,0.14);
+    --scrim:      rgba(8,6,4,0.62);
+
+    --ff-display: 'Cormorant Garamond', Georgia, serif;
+    --ff-ui:      'Jost', system-ui, sans-serif;
+    --ff-body:    'Manrope', system-ui, sans-serif;
+
+    --maxw: 1240px;
+    --gutter: clamp(1.25rem, 5vw, 4.5rem);
+    --shadow: 0 30px 70px -30px rgba(0,0,0,0.85);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+
+  body{
+    margin:0;
+    background:var(--espresso);
+    color:var(--cream);
+    font-family:var(--ff-body);
+    font-size:clamp(1rem,0.96rem + 0.2vw,1.075rem);
+    line-height:1.68;
+    font-weight:400;
+    letter-spacing:0.005em;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  img,video{ max-width:100%; display:block; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:400; line-height:1.04; letter-spacing:0.01em; }
+
+  ::selection{ background:var(--brass); color:var(--espresso); }
+
+  /* Focus states */
+  a:focus-visible,button:focus-visible,input:focus-visible,
+  select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
+    outline:2px solid var(--gold-hi);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .skip{
+    position:absolute; left:-999px; top:0; z-index:2000;
+    background:var(--brass); color:var(--espresso);
+    padding:0.75rem 1.25rem; font-family:var(--ff-ui);
+    text-transform:uppercase; letter-spacing:0.16em; font-size:0.72rem;
+  }
+  .skip:focus{ left:1rem; top:1rem; }
+
+  /* ---------- Shared layout ---------- */
+  .wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gutter); }
+
+  .section{ position:relative; padding-block:clamp(4.5rem,9vw,8.5rem); }
+
+  .eyebrow{
+    font-family:var(--ff-ui);
+    text-transform:uppercase;
+    letter-spacing:0.42em;
+    font-size:clamp(0.62rem,0.58rem + 0.2vw,0.74rem);
+    font-weight:500;
+    color:var(--brass);
+    display:inline-flex; align-items:center; gap:0.85em;
+    margin:0;
+  }
+  .eyebrow::before{
+    content:""; width:2.2rem; height:1px; background:var(--brass); opacity:0.7;
+  }
+  .eyebrow.center::after{
+    content:""; width:2.2rem; height:1px; background:var(--brass); opacity:0.7;
+  }
+  .eyebrow.center{ justify-content:center; }
+
+  .display{
+    font-family:var(--ff-display);
+    font-weight:400;
+    letter-spacing:0.005em;
+  }
+
+  .lede{
+    font-family:var(--ff-display);
+    font-weight:300;
+    font-size:clamp(1.35rem,1.1rem + 1.3vw,2rem);
+    line-height:1.34;
+    color:var(--cream);
+    letter-spacing:0.01em;
+  }
+
+  .muted{ color:var(--taupe); }
+
+  .hairline{ height:1px; background:var(--line); border:0; margin:0; }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    --bg:var(--brass); --fg:var(--espresso);
+    display:inline-flex; align-items:center; justify-content:center; gap:0.6em;
+    font-family:var(--ff-ui);
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:0.74rem;
+    font-weight:500;
+    padding:1.05em 1.9em;
+    background:var(--bg); color:var(--fg);
+    border:1px solid var(--bg);
+    cursor:pointer;
+    transition:transform .35s cubic-bezier(.2,.7,.3,1), background .35s, color .35s, border-color .35s;
+    white-space:nowrap;
+  }
+  .btn:hover{ transform:translateY(-2px); background:var(--gold-hi); border-color:var(--gold-hi); }
+  .btn--ghost{
+    --bg:transparent; --fg:var(--cream);
+    border-color:var(--line);
+  }
+  .btn--ghost:hover{ background:transparent; border-color:var(--gold-hi); color:var(--gold-hi); }
+  .btn--sm{ padding:0.85em 1.35em; font-size:0.68rem; letter-spacing:0.16em; }
+
+  .arrow-link{
+    font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.2em;
+    font-size:0.72rem; color:var(--gold-hi); display:inline-flex; align-items:center; gap:0.6em;
+    transition:gap .3s, color .3s;
+  }
+  .arrow-link::after{ content:"\2192"; transition:transform .3s; }
+  .arrow-link:hover{ gap:0.9em; color:var(--cream); }
+
+  /* ============================================================
+     HEADER / NAV
+     ============================================================ */
+  .topbar{
+    position:fixed; inset:0 0 auto 0; z-index:1000;
+    transition:background .5s ease, backdrop-filter .5s, border-color .5s, padding .4s;
+    border-bottom:1px solid transparent;
+  }
+  .topbar.is-stuck{
+    background:rgba(13,10,7,0.86);
+    backdrop-filter:blur(14px) saturate(1.2);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2);
+    border-bottom-color:var(--line-soft);
+  }
+  .topbar__inner{
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    padding-block:clamp(0.85rem,1.4vw,1.15rem);
+  }
+  .brand{ display:flex; flex-direction:column; line-height:1; }
+  .brand__name{
+    font-family:var(--ff-display); font-size:clamp(1.35rem,1.1rem + 0.9vw,1.7rem);
+    color:var(--cream); letter-spacing:0.02em;
+  }
+  .brand__name em{ font-style:italic; color:var(--gold-hi); }
+  .brand__tag{
+    font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.34em;
+    font-size:0.52rem; color:var(--brass); margin-top:0.5em; padding-left:0.12em;
+  }
+  .nav{ display:flex; align-items:center; gap:clamp(1.2rem,2.4vw,2.4rem); }
+  .nav__links{ display:flex; gap:clamp(1.1rem,2vw,2rem); list-style:none; margin:0; padding:0; }
+  .nav__links a{
+    font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.18em;
+    font-size:0.72rem; color:var(--taupe); position:relative; padding-block:0.3em;
+    transition:color .3s;
+  }
+  .nav__links a::after{
+    content:""; position:absolute; left:0; bottom:0; height:1px; width:0; background:var(--gold-hi);
+    transition:width .35s ease;
+  }
+  .nav__links a:hover,.nav__links a:focus-visible{ color:var(--cream); }
+  .nav__links a:hover::after{ width:100%; }
+  .nav__cta{ display:flex; align-items:center; gap:0.7rem; }
+  .nav__call{
+    font-family:var(--ff-ui); letter-spacing:0.12em; font-size:0.74rem; color:var(--cream);
+    display:inline-flex; align-items:center; gap:0.5em; padding:0.5em 0.2em;
+  }
+  .nav__call:hover{ color:var(--gold-hi); }
+  .nav__call svg{ width:14px; height:14px; }
+
+  .burger{
+    display:none; background:none; border:1px solid var(--line); color:var(--cream);
+    width:44px; height:44px; align-items:center; justify-content:center; cursor:pointer;
+    flex-direction:column; gap:5px; padding:0;
+  }
+  .burger span{ width:20px; height:1.5px; background:var(--cream); transition:transform .35s, opacity .3s; }
+  .burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+
+  /* Mobile drawer */
+  .mnav{
+    position:fixed; inset:0; z-index:999; background:rgba(10,7,5,0.97);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    display:flex; flex-direction:column; justify-content:center; gap:0.4rem;
+    padding:var(--gutter);
+    transform:translateY(-100%); transition:transform .5s cubic-bezier(.6,0,.2,1);
+    visibility:hidden;
+  }
+  .mnav.is-open{ transform:translateY(0); visibility:visible; }
+  .mnav a{
+    font-family:var(--ff-display); font-size:2rem; color:var(--cream);
+    padding-block:0.35rem; border-bottom:1px solid var(--line-soft);
+  }
+  .mnav a:hover{ color:var(--gold-hi); }
+  .mnav .mnav__cta{ margin-top:1.8rem; display:flex; flex-direction:column; gap:0.8rem; }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{
+    position:relative; min-height:100svh; display:flex; align-items:flex-end;
+    overflow:hidden; isolation:isolate;
+  }
+  .hero__media{ position:absolute; inset:0; z-index:-2; }
+  .hero__media video,.hero__media img{
+    width:100%; height:100%; object-fit:cover; object-position:center;
+  }
+  .hero__scrim{
+    position:absolute; inset:0; z-index:-1;
+    background:
+      linear-gradient(180deg, rgba(8,6,4,0.55) 0%, rgba(8,6,4,0.08) 32%, rgba(8,6,4,0.55) 74%, rgba(8,6,4,0.95) 100%),
+      radial-gradient(120% 80% at 20% 100%, rgba(13,10,7,0.85) 0%, transparent 60%);
+  }
+  .hero__inner{ padding-bottom:clamp(3.5rem,8vw,7rem); padding-top:9rem; width:100%; }
+  .hero__eyebrow{ margin-bottom:clamp(1.4rem,3vw,2.2rem); flex-wrap:wrap; }
+  .hero h1{
+    font-family:var(--ff-display); font-weight:400;
+    font-size:clamp(3rem,1.6rem + 8.2vw,6rem);
+    line-height:0.98; letter-spacing:0.005em; max-width:16ch;
+    text-shadow:0 2px 40px rgba(0,0,0,0.5);
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold-hi); }
+  .hero__sub{
+    margin-top:clamp(1.4rem,3vw,2rem); max-width:46ch;
+    font-size:clamp(1.05rem,1rem + 0.4vw,1.22rem); color:var(--cream);
+  }
+  .hero__actions{ margin-top:clamp(1.8rem,3.5vw,2.6rem); display:flex; flex-wrap:wrap; gap:0.9rem; }
+  .hero__meta{
+    margin-top:clamp(2rem,4vw,2.8rem); display:flex; flex-wrap:wrap; gap:0.6rem 2rem;
+    align-items:center; font-family:var(--ff-ui); letter-spacing:0.06em; font-size:0.82rem;
+    color:var(--taupe); border-top:1px solid var(--line-soft); padding-top:1.4rem; max-width:640px;
+  }
+  .hero__meta a{ color:var(--cream); }
+  .hero__meta a:hover{ color:var(--gold-hi); }
+  .hero__meta .dot{ color:var(--brass); }
+  .scroll-cue{
+    position:absolute; left:50%; bottom:1.6rem; transform:translateX(-50%); z-index:2;
+    font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.3em; font-size:0.58rem;
+    color:var(--taupe); display:flex; flex-direction:column; align-items:center; gap:0.6rem;
+  }
+  .scroll-cue span{ display:block; width:1px; height:34px; background:linear-gradient(var(--brass),transparent); }
+
+  /* ============================================================
+     MARQUEE / TRUST STRIP
+     ============================================================ */
+  .strip{
+    border-block:1px solid var(--line-soft); background:var(--char-1);
+    padding-block:1.1rem; overflow:hidden;
+  }
+  .strip__row{
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+    gap:0.6rem 2.4rem; font-family:var(--ff-ui); text-transform:uppercase;
+    letter-spacing:0.24em; font-size:0.68rem; color:var(--taupe);
+  }
+  .strip__row .g{ color:var(--brass); }
+  .strip__row .sep{ color:var(--line); }
+
+  /* ============================================================
+     POSITIONING / INTRO
+     ============================================================ */
+  .intro__grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(2rem,5vw,5rem); align-items:center;
+  }
+  .intro__copy h2{
+    font-family:var(--ff-display); font-size:clamp(2rem,1.4rem + 2.6vw,3.4rem);
+    margin-top:1.4rem; margin-bottom:1.4rem; max-width:18ch;
+  }
+  .intro__copy h2 em{ font-style:italic; color:var(--gold-hi); }
+  .intro__copy p+p{ margin-top:1.1rem; }
+  .intro__media{ position:relative; }
+  .intro__media img{
+    width:100%; aspect-ratio:4/5; object-fit:cover; border:1px solid var(--line-soft);
+  }
+  .intro__badge{
+    position:absolute; bottom:-1.4rem; left:-1.4rem; background:var(--char-2);
+    border:1px solid var(--line); padding:1.1rem 1.4rem; box-shadow:var(--shadow);
+    max-width:210px;
+  }
+  .intro__badge .n{ font-family:var(--ff-display); font-size:2.4rem; color:var(--gold-hi); line-height:1; }
+  .intro__badge .t{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.18em; font-size:0.6rem; color:var(--taupe); margin-top:0.4rem; }
+
+  .pillars{
+    margin-top:clamp(3rem,6vw,5rem); display:grid; grid-template-columns:repeat(3,1fr);
+    gap:1px; background:var(--line-soft); border:1px solid var(--line-soft);
+  }
+  .pillar{ background:var(--char-1); padding:clamp(1.6rem,3vw,2.4rem); }
+  .pillar h3{ font-family:var(--ff-display); font-size:1.5rem; color:var(--cream); margin-bottom:0.6rem; }
+  .pillar .k{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.2em; font-size:0.62rem; color:var(--brass); }
+  .pillar p{ color:var(--taupe); font-size:0.95rem; margin-top:0.7rem; }
+
+  /* ============================================================
+     SECTION HEADS
+     ============================================================ */
+  .sec-head{ max-width:60ch; }
+  .sec-head--center{ margin-inline:auto; text-align:center; }
+  .sec-head h2{
+    font-family:var(--ff-display); font-size:clamp(2.1rem,1.4rem + 3vw,3.7rem);
+    margin-top:1.2rem; letter-spacing:0.01em;
+  }
+  .sec-head h2 em{ font-style:italic; color:var(--gold-hi); }
+  .sec-head p{ margin-top:1.1rem; color:var(--taupe); font-size:1.05rem; }
+
+  /* ============================================================
+     SIGNATURE DISHES
+     ============================================================ */
+  .sig{ background:var(--char-1); border-block:1px solid var(--line-soft); }
+  .sig__grid{
+    margin-top:clamp(2.4rem,5vw,4rem);
+    display:grid; grid-template-columns:1.15fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:center;
+  }
+  .sig__figure{ position:relative; }
+  .sig__figure img{
+    width:100%; height:100%; max-height:640px; object-fit:cover; border:1px solid var(--line);
+  }
+  .sig__figure figcaption{
+    position:absolute; left:1.1rem; bottom:1.1rem; background:rgba(13,10,7,0.82);
+    border:1px solid var(--line); backdrop-filter:blur(4px);
+    font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.16em;
+    font-size:0.6rem; color:var(--cream); padding:0.55rem 0.9rem;
+  }
+  .sig__list{ list-style:none; margin:0; padding:0; }
+  .sig__item{ padding-block:1.5rem; border-bottom:1px solid var(--line-soft); }
+  .sig__item:first-child{ padding-top:0; }
+  .sig__item:last-child{ border-bottom:0; }
+  .sig__row{ display:flex; align-items:baseline; gap:1rem; justify-content:space-between; }
+  .sig__name{ font-family:var(--ff-display); font-size:clamp(1.5rem,1.2rem + 1vw,2rem); color:var(--cream); }
+  .sig__price{ font-family:var(--ff-ui); font-size:0.95rem; color:var(--gold-hi); letter-spacing:0.04em; white-space:nowrap; }
+  .sig__desc{ color:var(--taupe); margin-top:0.5rem; font-size:0.98rem; max-width:44ch; }
+  .fav{ color:var(--brass); font-size:0.7em; vertical-align:0.25em; margin-left:0.35em; }
+  .sig__foot{ margin-top:clamp(2.4rem,4vw,3.2rem); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
+
+  .sig__second{
+    margin-top:clamp(2.4rem,5vw,4rem); display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--line-soft); border:1px solid var(--line-soft);
+  }
+  .sig__tile{ position:relative; min-height:260px; overflow:hidden; }
+  .sig__tile img{ width:100%; height:100%; object-fit:cover; transition:transform 1.2s cubic-bezier(.2,.7,.3,1); }
+  .sig__tile:hover img{ transform:scale(1.05); }
+  .sig__tile figcaption{
+    position:absolute; inset:auto 0 0 0; padding:1.4rem;
+    background:linear-gradient(transparent,rgba(9,7,5,0.9));
+  }
+  .sig__tile figcaption .kk{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.2em; font-size:0.58rem; color:var(--brass); }
+  .sig__tile figcaption .nn{ font-family:var(--ff-display); font-size:1.5rem; color:var(--cream); margin-top:0.3rem; }
+
+  /* ============================================================
+     FULL MENU (TABS)
+     ============================================================ */
+  .menu{ background:var(--espresso); }
+  .tabs{
+    margin-top:clamp(2rem,4vw,3rem);
+    display:flex; flex-wrap:wrap; gap:0.4rem; border-bottom:1px solid var(--line-soft);
+    padding-bottom:0.1rem;
+  }
+  .tab{
+    font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.14em;
+    font-size:0.72rem; font-weight:500; color:var(--taupe);
+    background:none; border:0; border-bottom:2px solid transparent;
+    padding:0.85rem 1.05rem; cursor:pointer; transition:color .3s, border-color .3s;
+  }
+  .tab:hover{ color:var(--cream); }
+  .tab[aria-selected="true"]{ color:var(--gold-hi); border-bottom-color:var(--brass); }
+
+  .tabpanel{ padding-top:clamp(2rem,4vw,3rem); }
+  .tabpanel[hidden]{ display:none; }
+  .menu__cols{ columns:2; column-gap:clamp(2.5rem,6vw,5.5rem); }
+  .m-item{ break-inside:avoid; padding-block:1.15rem; border-bottom:1px solid var(--line-soft); }
+  .m-item__head{ display:flex; align-items:baseline; gap:0.75rem; }
+  .m-item__name{ font-family:var(--ff-display); font-size:1.4rem; color:var(--cream); }
+  .m-item__lead{ flex:1; height:1px; align-self:flex-end; margin-bottom:0.42em; background:var(--line-soft); }
+  .m-item__price{ font-family:var(--ff-ui); font-size:0.9rem; letter-spacing:0.04em; color:var(--gold-hi); white-space:nowrap; }
+  .m-item__desc{ color:var(--taupe); font-size:0.92rem; margin-top:0.4rem; line-height:1.55; }
+  .m-note{ color:var(--taupe-dim); font-size:0.85rem; margin-top:0.4rem; font-style:italic; }
+  .menu__foot{
+    margin-top:clamp(2.4rem,4vw,3rem); padding-top:1.6rem; border-top:1px solid var(--line-soft);
+    display:flex; flex-wrap:wrap; gap:1.4rem; justify-content:space-between; align-items:flex-start;
+  }
+  .menu__foot p{ font-size:0.82rem; color:var(--taupe-dim); max-width:52ch; margin:0; }
+  .menu__foot .gr{ color:var(--brass); font-family:var(--ff-ui); letter-spacing:0.06em; }
+
+  /* ============================================================
+     COCKTAILS
+     ============================================================ */
+  .cocktails{ position:relative; overflow:hidden; isolation:isolate; }
+  .cocktails__bg{ position:absolute; inset:0; z-index:-2; }
+  .cocktails__bg video,.cocktails__bg img{ width:100%; height:100%; object-fit:cover; }
+  .cocktails__bg::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(11,8,5,0.9),rgba(11,8,5,0.82)),
+      radial-gradient(90% 60% at 80% 20%, rgba(192,71,43,0.14), transparent 60%);
+  }
+  .cocktails__grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(2.4rem,5vw,4.5rem); align-items:center; }
+  .cocktails__aside img{ width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center top; border:1px solid var(--line); }
+  .cocktails__aside .hh{
+    margin-top:1.2rem; border:1px solid var(--line); background:rgba(13,10,7,0.6);
+    padding:1.1rem 1.3rem;
+  }
+  .cocktails__aside .hh .k{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.2em; font-size:0.6rem; color:var(--brass); }
+  .cocktails__aside .hh .v{ font-family:var(--ff-display); font-size:1.3rem; color:var(--cream); margin-top:0.35rem; }
+  .cocktails__aside .hh p{ font-size:0.85rem; color:var(--taupe); margin:0.3rem 0 0; }
+
+  .cktl-list{ list-style:none; margin:2rem 0 0; padding:0; }
+  .cktl{ padding-block:1.05rem; border-bottom:1px solid var(--line-soft); }
+  .cktl:last-child{ border-bottom:0; }
+  .cktl__row{ display:flex; align-items:baseline; gap:0.75rem; }
+  .cktl__name{ font-family:var(--ff-display); font-size:1.45rem; color:var(--cream); }
+  .cktl__lead{ flex:1; height:1px; align-self:flex-end; margin-bottom:0.42em; background:var(--line-soft); }
+  .cktl__price{ font-family:var(--ff-ui); font-size:0.9rem; color:var(--gold-hi); }
+  .cktl__desc{ color:var(--taupe); font-size:0.88rem; margin-top:0.3rem; }
+
+  /* ============================================================
+     EXPERIENCE / NIGHTS
+     ============================================================ */
+  .nights{ background:var(--char-1); border-block:1px solid var(--line-soft); }
+  .nights__feature{
+    position:relative; margin-top:clamp(2.4rem,5vw,3.5rem); border:1px solid var(--line);
+    min-height:clamp(360px,52vw,540px); display:flex; align-items:flex-end; overflow:hidden; isolation:isolate;
+  }
+  .nights__feature video,.nights__feature img{ position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; }
+  .nights__feature::after{
+    content:""; position:absolute; inset:0; z-index:-1;
+    background:linear-gradient(180deg,rgba(9,7,5,0.35),rgba(9,7,5,0.35) 40%,rgba(9,7,5,0.92));
+  }
+  .nights__feature .cap{ padding:clamp(1.6rem,4vw,3rem); max-width:640px; }
+  .nights__feature .cap h3{ font-family:var(--ff-display); font-size:clamp(2rem,1.4rem + 2.4vw,3.2rem); }
+  .nights__feature .cap h3 em{ font-style:italic; color:var(--gold-hi); }
+  .nights__feature .cap p{ margin-top:0.8rem; color:var(--cream); max-width:44ch; }
+
+  .nights__cards{ margin-top:1px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); border-top:0; }
+  .ncard{ background:var(--char-2); padding:clamp(1.5rem,2.6vw,2rem); }
+  .ncard .when{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.18em; font-size:0.6rem; color:var(--brass); }
+  .ncard h4{ font-family:var(--ff-display); font-size:1.55rem; color:var(--cream); margin-top:0.6rem; }
+  .ncard p{ color:var(--taupe); font-size:0.9rem; margin-top:0.6rem; }
+
+  .smoked{
+    margin-top:clamp(2.4rem,5vw,3.5rem); display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.6rem,4vw,3rem);
+    align-items:center;
+  }
+  .smoked__media{ position:relative; overflow:hidden; border:1px solid var(--line); min-height:320px; }
+  .smoked__media video,.smoked__media img{ width:100%; height:100%; object-fit:cover; }
+  .smoked__media::after{ content:""; position:absolute; inset:0; background:linear-gradient(120deg,transparent,rgba(9,7,5,0.55)); }
+  .smoked__copy h3{ font-family:var(--ff-display); font-size:clamp(1.8rem,1.3rem + 1.8vw,2.6rem); }
+  .smoked__copy h3 em{ font-style:italic; color:var(--gold-hi); }
+  .smoked__copy p{ margin-top:1rem; color:var(--taupe); }
+
+  /* ============================================================
+     STORY
+     ============================================================ */
+  .story__grid{ display:grid; grid-template-columns:1fr 0.85fr; gap:clamp(2.4rem,6vw,5rem); align-items:center; }
+  .story__copy h2{ font-family:var(--ff-display); font-size:clamp(2.1rem,1.4rem + 3vw,3.7rem); margin:1.2rem 0 1.4rem; max-width:16ch; }
+  .story__copy h2 em{ font-style:italic; color:var(--gold-hi); }
+  .story__copy p+p{ margin-top:1.1rem; }
+  .pull{
+    font-family:var(--ff-display); font-style:italic; font-size:clamp(1.5rem,1.2rem + 1.4vw,2.2rem);
+    line-height:1.3; color:var(--cream); border-left:2px solid var(--brass);
+    padding-left:1.4rem; margin:2rem 0; max-width:26ch;
+  }
+  .owner-note{
+    margin-top:2rem; border:1px solid var(--line-soft); background:var(--char-1); padding:1.4rem 1.6rem;
+  }
+  .owner-note p{ color:var(--cream); font-style:italic; font-family:var(--ff-display); font-size:1.2rem; margin:0; }
+  .owner-note .sig-by{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.18em; font-size:0.62rem; color:var(--brass); margin-top:0.9rem; font-style:normal; }
+  .story__media{ position:relative; }
+  .story__media img{ width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center; border:1px solid var(--line-soft); }
+  .story__media .tag{
+    position:absolute; top:-1.2rem; right:-1rem; background:var(--ember); color:var(--cream);
+    font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.16em; font-size:0.6rem;
+    padding:0.6rem 0.9rem;
+  }
+
+  /* ============================================================
+     PRIVATE EVENTS
+     ============================================================ */
+  .events{ background:var(--char-1); border-block:1px solid var(--line-soft); }
+  .events__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+  .events__media{ position:relative; overflow:hidden; border:1px solid var(--line); }
+  .events__media img{ width:100%; aspect-ratio:5/4; object-fit:cover; transition:transform 1.2s cubic-bezier(.2,.7,.3,1); }
+  .events__media:hover img{ transform:scale(1.04); }
+  .events__copy h2{ font-family:var(--ff-display); font-size:clamp(2rem,1.4rem + 2.6vw,3.3rem); margin:1.2rem 0 1.2rem; }
+  .events__copy h2 em{ font-style:italic; color:var(--gold-hi); }
+  .events__list{ list-style:none; margin:1.4rem 0 2rem; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0.7rem 1.4rem; }
+  .events__list li{ font-family:var(--ff-ui); letter-spacing:0.04em; font-size:0.86rem; color:var(--cream); display:flex; gap:0.6em; align-items:center; }
+  .events__list li::before{ content:""; width:6px; height:6px; background:var(--brass); transform:rotate(45deg); flex:none; }
+
+  /* ============================================================
+     VISIT + RESERVE
+     ============================================================ */
+  .visit__grid{ display:grid; grid-template-columns:0.95fr 1.05fr; gap:clamp(2rem,5vw,4rem); align-items:stretch; }
+  .visit__info h2{ font-family:var(--ff-display); font-size:clamp(2rem,1.4rem + 2.6vw,3.3rem); margin:1.2rem 0 1.6rem; }
+  .visit__block{ margin-bottom:1.7rem; }
+  .visit__block .lbl{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.2em; font-size:0.62rem; color:var(--brass); margin-bottom:0.6rem; }
+  .visit__block a{ color:var(--cream); }
+  .visit__block a:hover{ color:var(--gold-hi); }
+  .addr{ font-family:var(--ff-display); font-size:1.4rem; color:var(--cream); line-height:1.3; }
+  .hours{ list-style:none; margin:0; padding:0; max-width:360px; }
+  .hours li{ display:flex; justify-content:space-between; gap:1rem; padding-block:0.5rem; border-bottom:1px solid var(--line-soft); font-size:0.92rem; }
+  .hours li:last-child{ border-bottom:0; }
+  .hours .d{ color:var(--taupe); font-family:var(--ff-ui); letter-spacing:0.06em; }
+  .hours .t{ color:var(--cream); }
+  .hours .closed{ color:var(--ember); }
+  .visit__ctas{ display:flex; flex-wrap:wrap; gap:0.8rem; margin-top:0.4rem; }
+
+  .visit__map{ min-height:340px; border:1px solid var(--line); overflow:hidden; }
+  .visit__map iframe{ width:100%; height:100%; min-height:340px; border:0; filter:grayscale(0.35) contrast(1.05) brightness(0.85); }
+
+  .reserve{
+    margin-top:clamp(2.4rem,5vw,3.5rem); border:1px solid var(--line); background:var(--char-2);
+    padding:clamp(1.6rem,4vw,2.6rem);
+    display:grid; grid-template-columns:0.8fr 1.2fr; gap:clamp(1.6rem,4vw,3rem); align-items:center;
+  }
+  .reserve__intro h3{ font-family:var(--ff-display); font-size:clamp(1.8rem,1.3rem + 1.6vw,2.6rem); }
+  .reserve__intro h3 em{ font-style:italic; color:var(--gold-hi); }
+  .reserve__intro p{ color:var(--taupe); margin-top:0.8rem; font-size:0.95rem; }
+  .reserve__intro .call{ margin-top:1.2rem; display:inline-flex; align-items:center; gap:0.6em; font-family:var(--ff-display); font-size:1.7rem; color:var(--gold-hi); }
+  .rform{ display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; }
+  .rform .full{ grid-column:1 / -1; }
+  .rform label{ display:block; font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.14em; font-size:0.58rem; color:var(--taupe); margin-bottom:0.45rem; }
+  .rform input,.rform select{
+    width:100%; background:var(--espresso); border:1px solid var(--line-soft); color:var(--cream);
+    font-family:var(--ff-body); font-size:0.95rem; padding:0.8rem 0.9rem;
+  }
+  .rform input::placeholder{ color:var(--taupe-dim); }
+  .rform input:focus,.rform select:focus{ border-color:var(--brass); outline-offset:1px; }
+  .rform .btn{ width:100%; }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .foot{ background:var(--char-1); border-top:1px solid var(--line); padding-block:clamp(3.5rem,6vw,5rem); }
+  .foot__top{ display:grid; grid-template-columns:1fr 1.4fr; gap:clamp(2rem,5vw,4rem); align-items:start; }
+  .foot__seal{ display:flex; flex-direction:column; gap:1.4rem; }
+  .foot__seal img{ width:130px; height:130px; object-fit:cover; border:1px solid var(--line); border-radius:2px; }
+  .foot__seal p{ color:var(--taupe); font-size:0.9rem; max-width:34ch; margin:0; }
+  .foot__cols{ display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+  .foot__col h4{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:0.2em; font-size:0.62rem; color:var(--brass); margin-bottom:1rem; }
+  .foot__col a,.foot__col p{ display:block; color:var(--taupe); font-size:0.9rem; margin-bottom:0.5rem; }
+  .foot__col a:hover{ color:var(--gold-hi); }
+  .foot__hours li{ display:flex; justify-content:space-between; gap:1rem; font-size:0.85rem; color:var(--taupe); padding-block:0.3rem; list-style:none; }
+  .foot__hours{ margin:0; padding:0; }
+  .foot__bottom{
+    margin-top:clamp(2.4rem,5vw,3.5rem); padding-top:1.6rem; border-top:1px solid var(--line-soft);
+    display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center;
+  }
+  .foot__bottom p{ margin:0; font-family:var(--ff-ui); letter-spacing:0.06em; font-size:0.72rem; color:var(--taupe-dim); text-transform:uppercase; }
+  .foot__bottom .wordmark{ font-family:var(--ff-display); font-size:1.3rem; color:var(--cream); text-transform:none; letter-spacing:0.02em; }
+  .foot__bottom .wordmark em{ font-style:italic; color:var(--gold-hi); }
+
+  /* ============================================================
+     SCROLL REVEAL
+     ============================================================ */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity 1s cubic-bezier(.2,.7,.3,1), transform 1s cubic-bezier(.2,.7,.3,1); }
+  .reveal.in{ opacity:1; transform:none; }
+  .reveal[data-d="1"]{ transition-delay:0.08s; }
+  .reveal[data-d="2"]{ transition-delay:0.16s; }
+  .reveal[data-d="3"]{ transition-delay:0.24s; }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width:1040px){
+    .nav__links{ display:none; }
+    .burger{ display:flex; }
+    .intro__grid,.sig__grid,.cocktails__grid,.story__grid,.events__grid,.visit__grid,.reserve,.foot__top,.smoked{
+      grid-template-columns:1fr;
+    }
+    .nights__cards{ grid-template-columns:repeat(2,1fr); }
+    .reserve{ gap:1.6rem; }
+    .story__media{ order:-1; }
+    .intro__media{ max-width:520px; }
+  }
+  @media (max-width:720px){
+    .menu__cols{ columns:1; }
+    .pillars{ grid-template-columns:1fr; }
+    .sig__second{ grid-template-columns:1fr; }
+    .events__list{ grid-template-columns:1fr; }
+    .foot__cols{ grid-template-columns:1fr; gap:1.6rem; }
+    .rform{ grid-template-columns:1fr; }
+    .nav__call span.txt{ display:none; }
+    .hero__meta{ font-size:0.76rem; gap:0.5rem 1.2rem; }
+    .nav__cta .btn{ display:none; }
+    .brand__tag{ display:none; }
+  }
+  @media (max-width:460px){
+    .nights__cards{ grid-template-columns:1fr; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; scroll-behavior:auto !important; }
+    .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+    .btn:hover,.sig__tile:hover img,.events__media:hover img{ transform:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#menu">Skip to menu</a>
+
+<!-- ============================================================
+     1 · HEADER / NAV
+     ============================================================ -->
+<header class="topbar" id="top">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="#top" aria-label="The Flavor House, home">
+      <span class="brand__name">The Flavor <em>House</em></span>
+      <span class="brand__tag">Caribbean Creole Comfort Cuisine</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#signatures">Signatures</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#cocktails">Cocktails</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a class="nav__call" href="tel:+19379994047" aria-label="Call The Flavor House at (937) 999-4047">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 3.5 9 8l-2 1.5a12 12 0 0 0 5.5 5.5L14 13l4.5 2.5-1 3.5a2 2 0 0 1-2.2 1.4A16.5 16.5 0 0 1 3.6 8.7 2 2 0 0 1 5 6.5z"/></svg>
+          <span class="txt">(937) 999-4047</span>
+        </a>
+        <a class="btn btn--sm" href="#reserve">Reserve</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a href="#signatures">Signatures</a>
+  <a href="#menu">Menu</a>
+  <a href="#cocktails">Cocktails</a>
+  <a href="#events">Events</a>
+  <a href="#visit">Visit</a>
+  <div class="mnav__cta">
+    <a class="btn" href="#reserve">Reserve a table</a>
+    <a class="btn btn--ghost" href="tel:+19379994047">Call (937) 999-4047</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============================================================
+       2 · HERO
+       ============================================================ -->
+  <section class="hero" aria-label="Welcome to The Flavor House">
+    <div class="hero__media">
+      <video autoplay muted loop playsinline preload="metadata"
+             poster="assets/img/hero-dining-poster.jpg"
+             aria-hidden="true">
+        <source src="assets/video/hero-dining.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+
+    <div class="wrap hero__inner">
+      <p class="eyebrow hero__eyebrow">Caribbean · Creole · Cocktail Culture · Downtown Dayton</p>
+      <h1 class="display">Scratch, spice, and <em>second helpings.</em></h1>
+      <p class="hero__sub">An upscale Caribbean and Creole kitchen, a full cocktail lounge, and a private room for the whole celebration, in the heart of downtown Dayton.</p>
+      <div class="hero__actions">
+        <a class="btn" href="#reserve">Reserve a table</a>
+        <a class="btn btn--ghost" href="#menu">See the menu</a>
+      </div>
+      <div class="hero__meta">
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener">130 W 2nd St, Dayton, OH</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="tel:+19379994047">(937) 999-4047</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Lunch &amp; Dinner · Est. 2021</span>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip" aria-label="At a glance">
+    <div class="wrap strip__row">
+      <span class="g">Est. 2021</span><span class="sep">/</span>
+      <span>Black-Owned</span><span class="sep">/</span>
+      <span>Trinidad-Rooted Kitchen</span><span class="sep">/</span>
+      <span>Cocktail Lounge</span><span class="sep">/</span>
+      <span>Cigar Patio</span><span class="sep">/</span>
+      <span class="g">Downtown Dayton</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       3 · POSITIONING / INTRO
+       ============================================================ -->
+  <section class="section intro" aria-labelledby="intro-h">
+    <div class="wrap">
+      <div class="intro__grid">
+        <div class="intro__copy reveal">
+          <p class="eyebrow">A swank environment</p>
+          <h2 id="intro-h" class="display">More than a restaurant. <em>It's a vibe.</em></h2>
+          <p>The Flavor House is where Trinidad kitchens meet a downtown Dayton corner. Scotch bonnet, green seasoning, and slow-stewed oxtail, woven through with Creole and soul-food tradition, and served in a room designed for a slow evening and a good crowd.</p>
+          <p>Come for a lunch plate. Stay for a craft cocktail and real hospitality. Warm pendant light, low music, and a unique dining experience with flavorful, from-scratch food and superior service.</p>
+        </div>
+        <figure class="intro__media reveal" data-d="1">
+          <img src="assets/img/interior-window.jpg" alt="A host in a white blazer standing by tall downtown windows in the warm, candlelit dining room of The Flavor House">
+          <div class="intro__badge">
+            <div class="n">130</div>
+            <div class="t">W 2nd St · Downtown Dayton</div>
+          </div>
+        </figure>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar reveal">
+          <span class="k">The Kitchen</span>
+          <h3 class="display">Caribbean &amp; Creole</h3>
+          <p>Cooked from scratch. Gumbo, oxtail, rum-glazed salmon, curry roti, and Signature baked mac. No shortcuts.</p>
+        </div>
+        <div class="pillar reveal" data-d="1">
+          <span class="k">The Lounge</span>
+          <h3 class="display">Cocktail Culture</h3>
+          <p>A full bar of house cocktails and top-shelf spirits. Happy Hour every day, 4 to 6PM, half off the good stuff.</p>
+        </div>
+        <div class="pillar reveal" data-d="2">
+          <span class="k">The Patio &amp; Room</span>
+          <h3 class="display">Cigars &amp; Celebrations</h3>
+          <p>A cigar patio and a connected private room built for showers, mixers, and the whole family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4 · SIGNATURE DISHES
+       ============================================================ -->
+  <section class="section sig" id="signatures" aria-labelledby="sig-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">From the kitchen</p>
+        <h2 id="sig-h" class="display">The plates we're <em>known for.</em></h2>
+        <p>A handful of the dishes regulars come back for, and the ones that keep the foodie tastings talking. Every plate is built from scratch, spiced with intent, and portioned for second helpings.</p>
+      </div>
+
+      <div class="sig__grid">
+        <figure class="sig__figure reveal">
+          <img src="assets/img/plate-hearty.jpg" alt="A hearty plate of sliced, seasoned meat fanned over golden Caribbean rice, finished with a parmesan cream sauce">
+          <figcaption>House Signature · Over Caribbean rice</figcaption>
+        </figure>
+
+        <ul class="sig__list reveal" data-d="1">
+          <li class="sig__item">
+            <div class="sig__row">
+              <h3 class="sig__name display">Flavor House Gumbo <span class="fav" title="House favorite" aria-label="House favorite">&#9733;</span></h3>
+              <span class="sig__price">$26</span>
+            </div>
+            <p class="sig__desc">Crab legs, chicken, andouille, shrimp, and okra with onions and peppers, ladled over yellow Caribbean rice.</p>
+          </li>
+          <li class="sig__item">
+            <div class="sig__row">
+              <h3 class="sig__name display">Oxtail Sandwich <span class="fav" title="House favorite" aria-label="House favorite">&#9733;</span></h3>
+              <span class="sig__price">$23</span>
+            </div>
+            <p class="sig__desc">Slow-braised oxtail and dijon on toasted brioche, served with fries. The Trinidad classic, handheld.</p>
+          </li>
+          <li class="sig__item">
+            <div class="sig__row">
+              <h3 class="sig__name display">Caribbean Rum Glazed Salmon <span class="fav" title="House favorite" aria-label="House favorite">&#9733;</span></h3>
+              <span class="sig__price">$23</span>
+            </div>
+            <p class="sig__desc">Grilled rum-glazed salmon over garlic mash with green beans. Sweet heat, clean finish.</p>
+          </li>
+          <li class="sig__item">
+            <div class="sig__row">
+              <h3 class="sig__name display">Portobello Dian <span class="fav" title="House favorite" aria-label="House favorite">&#9733;</span></h3>
+              <span class="sig__price">$18</span>
+            </div>
+            <p class="sig__desc">Grilled portobello with onions and peppers over Caribbean rice, finished in parmesan cream. The vegetarian showpiece.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sig__foot reveal">
+        <a class="btn btn--ghost" href="#menu">Explore the full menu</a>
+        <span class="muted" style="font-family:var(--ff-ui);letter-spacing:0.06em;font-size:0.78rem;">Marked <span style="color:var(--brass)">&#9733;</span> are house favorites</span>
+      </div>
+
+      <div class="sig__second reveal">
+        <figure class="sig__tile">
+          <img src="assets/img/plate-signature.jpg" alt="A signature plate of grilled protein over rice with a rich cream sauce">
+          <figcaption>
+            <div class="kk">Plated with care</div>
+            <div class="nn display">Chicken Fontaine</div>
+          </figcaption>
+        </figure>
+        <figure class="sig__tile">
+          <img src="assets/img/table-spread.jpg" alt="An overhead spread of six Flavor House dishes showing the range of the menu">
+          <figcaption>
+            <div class="kk">Bring the whole table</div>
+            <div class="nn display">Family-Style Spreads</div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5 · FULL MENU (TABS)
+       ============================================================ -->
+  <section class="section menu" id="menu" aria-labelledby="menu-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">The full table</p>
+        <h2 id="menu-h" class="display">The <em>menu.</em></h2>
+        <p>Starters to sweets, greens to gumbo. Lunch is served Monday to Friday, 11am to 2:30pm, with dinner every evening.</p>
+      </div>
+
+      <div class="tabs reveal" role="tablist" aria-label="Menu categories">
+        <button class="tab" role="tab" id="tab-starters" aria-controls="panel-starters" aria-selected="true">Starters</button>
+        <button class="tab" role="tab" id="tab-greens" aria-controls="panel-greens" aria-selected="false" tabindex="-1">Greens &amp; Salads</button>
+        <button class="tab" role="tab" id="tab-veg" aria-controls="panel-veg" aria-selected="false" tabindex="-1">Vegetarian</button>
+        <button class="tab" role="tab" id="tab-hand" aria-controls="panel-hand" aria-selected="false" tabindex="-1">Handhelds</button>
+        <button class="tab" role="tab" id="tab-mains" aria-controls="panel-mains" aria-selected="false" tabindex="-1">Mains</button>
+        <button class="tab" role="tab" id="tab-sides" aria-controls="panel-sides" aria-selected="false" tabindex="-1">Sides</button>
+        <button class="tab" role="tab" id="tab-desserts" aria-controls="panel-desserts" aria-selected="false" tabindex="-1">Desserts</button>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="tabpanel" id="panel-starters" role="tabpanel" aria-labelledby="tab-starters" tabindex="0">
+        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Rolls <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$11</span></div><p class="m-item__desc">Collard greens, cabbage, and roasted chicken in an egg roll, with sweet chili dip. Veg style available.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Creamy Collard Green Dip <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$12</span></div><p class="m-item__desc">A southern twist on spinach dip, served with house pita chips.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Chicken Wings</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$15</span></div><p class="m-item__desc">Ten wings, any flavor: bbq, lemon pepper, hot, spicy garlic, or FH gold.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Salmon Bites</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$14</span></div><p class="m-item__desc">Cajun fried salmon bites with sweet chili dip.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Southern Fried Okra</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$10</span></div><p class="m-item__desc">Battered, fried, and tossed in lemon pepper.</p></li>
+        </ul>
+      </div>
+
+      <!-- GREENS -->
+      <div class="tabpanel" id="panel-greens" role="tabpanel" aria-labelledby="tab-greens" tabindex="0" hidden>
+        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Cranberry Walnut Salad</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$14</span></div><p class="m-item__desc">Mixed greens, feta, cucumbers, cranberries, and walnuts with raspberry vinaigrette.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Caesar</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$12</span></div><p class="m-item__desc">Romaine, parmesan, and croutons with housemade caesar.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Salad</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$10</span></div><p class="m-item__desc">Mixed greens, tomatoes, red onions, and cucumbers with housemade ranch.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Add a Protein</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$8 / $10 / $12</span></div><p class="m-item__desc">Grilled chicken $8, shrimp $10, or salmon $12 on any salad.</p></li>
+        </ul>
+      </div>
+
+      <!-- VEG -->
+      <div class="tabpanel" id="panel-veg" role="tabpanel" aria-labelledby="tab-veg" tabindex="0" hidden>
+        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Portobello Dian <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$18</span></div><p class="m-item__desc">Grilled portobello with onions and peppers over Caribbean rice, finished in parmesan cream sauce.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Chickpeas &amp; Potatoes with Roti</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$19</span></div><p class="m-item__desc">A curry coconut-milk stew with homemade roti. Protein available.</p></li>
+        </ul>
+      </div>
+
+      <!-- HANDHELDS -->
+      <div class="tabpanel" id="panel-hand" role="tabpanel" aria-labelledby="tab-hand" tabindex="0" hidden>
+        <p class="m-note" style="margin-bottom:1rem;">Served with fries. Add truffle fries for $2.</p>
+        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Oxtail Sandwich <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$23</span></div><p class="m-item__desc">Braised oxtail and dijon on toasted brioche.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Jerk Burger <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$17</span></div><p class="m-item__desc">Beef, pepperjack, lettuce, onions, tomato, pickles, and Caribbean bbq on brioche.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Sweet Chili Shrimp Po' Boy</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$18</span></div><p class="m-item__desc">Cajun fried shrimp, sweet chili, and lettuce on a pistolette.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Crispy Chicken Sandwich</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$16</span></div><p class="m-item__desc">Cajun fried chicken, lettuce, pickle, and FH sauce on brioche.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Salmon Burger</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$18</span></div><p class="m-item__desc">Grilled salmon patty, cheese, lettuce, pickles, and FH sauce on brioche.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Burger</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$17</span></div><p class="m-item__desc">Beef, cheese, lettuce, tomato, onions, pickles, and mayo on brioche.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Turkey Burger</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$17</span></div><p class="m-item__desc">Turkey patty, cheese, lettuce, tomato, pickles, onions, and bourbon sauce on brioche.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Double Bourbon Burger</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$19</span></div><p class="m-item__desc">Two beef patties, cheese, veg, and Kentucky bourbon sauce on brioche.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Cheesesteak</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$16 / $17 / $18</span></div><p class="m-item__desc">Provolone, veg, banana peppers, and mayo on a pistolette. Chicken $16, beef $17, salmon $18.</p></li>
+        </ul>
+      </div>
+
+      <!-- MAINS -->
+      <div class="tabpanel" id="panel-mains" role="tabpanel" aria-labelledby="tab-mains" tabindex="0" hidden>
+        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Gumbo <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$26</span></div><p class="m-item__desc">Crab legs, chicken, andouille, shrimp, okra, onions, and peppers over Caribbean rice.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Cajun Fried Fish &amp; Shrimp Basket <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$23</span></div><p class="m-item__desc">Cajun fried fish and shrimp with fries.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Caribbean Rum Glazed Salmon <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$23</span></div><p class="m-item__desc">Grilled rum-glazed salmon with garlic mash and green beans.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Chicken Fontaine</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$23</span></div><p class="m-item__desc">Grilled chicken, portobello, onions, and peppers in parmesan cream over garlic mash.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Creamy Alfredo</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$18 / $20</span></div><p class="m-item__desc">Fettuccine in parmesan cream with garlic bread. Chicken $18, shrimp $20.</p></li>
+        </ul>
+      </div>
+
+      <!-- SIDES -->
+      <div class="tabpanel" id="panel-sides" role="tabpanel" aria-labelledby="tab-sides" tabindex="0" hidden>
+        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Signature Baked Mac &amp; Cheese <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$8</span></div></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Yellow Caribbean Rice</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$7</span></div></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Collard Greens</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$8</span></div></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Garlic Mashed Potatoes</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$7</span></div></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Green Beans</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$7</span></div></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Black Beans &amp; Rice</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$8</span></div></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Black Beans</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$6</span></div></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Fries</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$7</span></div><p class="m-item__desc">Add truffle for $9.</p></li>
+        </ul>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="tabpanel" id="panel-desserts" role="tabpanel" aria-labelledby="tab-desserts" tabindex="0" hidden>
+        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Sweet Potato Cheesecake <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$10</span></div><p class="m-item__desc">The house finish, southern and rich.</p></li>
+          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Triple Chocolate Extraordinaire</span><span class="m-item__lead" aria-hidden="true"></span><span class="m-item__price">$7</span></div><p class="m-item__desc">For the deep chocolate crowd.</p></li>
+        </ul>
+      </div>
+
+      <div class="menu__foot reveal">
+        <p>Menu transcribed from The Flavor House's own menu. Confirm current prices with the kitchen before launch.</p>
+        <p class="gr">Parties of 6 or more add an 18% gratuity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 · COCKTAIL PROGRAM
+       ============================================================ -->
+  <section class="section cocktails" id="cocktails" aria-labelledby="cktl-h">
+    <div class="cocktails__bg" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/cocktail-bar-poster.jpg">
+        <source src="assets/video/cocktail-bar.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">The bar</p>
+        <h2 id="cktl-h" class="display">Cocktail <em>culture.</em></h2>
+        <p>A full lounge behind the kitchen. House builds with island rum, top-shelf bourbon, and fresh citrus, poured slow. Half off cocktails, spirits, and starters every day from 4 to 6PM.</p>
+      </div>
+
+      <div class="cocktails__grid">
+        <aside class="cocktails__aside reveal">
+          <img src="assets/img/cocktail-amber.jpg" alt="An amber cocktail being poured over ice at the Flavor House bar, backlit and glowing">
+          <div class="hh">
+            <div class="k">Every day · 4 to 6PM</div>
+            <div class="v display">Happy Hour</div>
+            <p>Half off cocktails, spirits, and starters.</p>
+          </div>
+        </aside>
+
+        <div class="reveal" data-d="1">
+          <ul class="cktl-list">
+            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Island Old Fashion <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="cktl__lead" aria-hidden="true"></span><span class="cktl__price">$15</span></div><p class="cktl__desc">Buffalo Trace, Appleton rum, demerara, bitter trio.</p></li>
+            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">That Girl <span class="fav" aria-label="House favorite">&#9733;</span></span><span class="cktl__lead" aria-hidden="true"></span><span class="cktl__price">$14</span></div><p class="cktl__desc">Woodford Reserve, amaretto, vanilla, lemon.</p></li>
+            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Side Car</span><span class="cktl__lead" aria-hidden="true"></span><span class="cktl__price">$13</span></div><p class="cktl__desc">Meukow VS, triple sec, creole shrub, lemon, albumen.</p></li>
+            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Love TKO</span><span class="cktl__lead" aria-hidden="true"></span><span class="cktl__price">$12</span></div><p class="cktl__desc">Hennessy, strawberry, lime, cane sugar.</p></li>
+            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Ain't No Woman</span><span class="cktl__lead" aria-hidden="true"></span><span class="cktl__price">$12</span></div><p class="cktl__desc">Empress gin, lavender, rosemary, honey, lemon.</p></li>
+            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Fantastic Voyage</span><span class="cktl__lead" aria-hidden="true"></span><span class="cktl__price">$12</span></div><p class="cktl__desc">Bumbu rum, RumChata, amaretto, nutmeg.</p></li>
+            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Flavor House Mule</span><span class="cktl__lead" aria-hidden="true"></span><span class="cktl__price">$12</span></div><p class="cktl__desc">Jose Cuervo Silver, strawberry, ginger beer.</p></li>
+            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Skin Tight</span><span class="cktl__lead" aria-hidden="true"></span><span class="cktl__price">$10</span></div><p class="cktl__desc">Tito's vodka, lemon, strawberry, triple sec, cane sugar.</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9 · PRIVATE EVENTS & CATERING
+       ============================================================ -->
+  <section class="section events" id="events" aria-labelledby="events-h">
+    <div class="wrap">
+      <div class="events__grid">
+        <figure class="events__media reveal">
+          <img src="assets/img/interior-dining.jpg" alt="The Flavor House dining room set with warm pendant lights and greenery, ready for a private gathering">
+        </figure>
+        <div class="events__copy reveal" data-d="1">
+          <p class="eyebrow">Private events &amp; catering</p>
+          <h2 id="events-h" class="display">A room for the <em>whole celebration.</em></h2>
+          <p>A connected private space, right off the main room, built for the moments worth gathering for. We handle the food, the bar, and the details, so you can be a guest at your own party.</p>
+          <ul class="events__list">
+            <li>Bridal &amp; baby showers</li>
+            <li>Receptions</li>
+            <li>Corporate mixers</li>
+            <li>Repasts</li>
+            <li>Birthday dinners</li>
+            <li>Off-site catering</li>
+          </ul>
+          <div class="hero__actions" style="margin-top:0;">
+            <a class="btn" href="mailto:theflavorhouse130@gmail.com?subject=Private%20Event%20Inquiry%20-%20The%20Flavor%20House">Book your event</a>
+            <a class="btn btn--ghost" href="tel:+19379994047">Call to plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10 · VISIT + RESERVE
+       ============================================================ -->
+  <section class="section" id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Find us</p>
+        <h2 id="visit-h" class="display" style="margin-bottom:0;">Visit The Flavor House.</h2>
+      </div>
+
+      <div class="visit__grid" style="margin-top:clamp(2rem,4vw,3rem);">
+        <div class="visit__info reveal">
+          <div class="visit__block">
+            <div class="lbl">Address</div>
+            <p class="addr">130 W 2nd St<br>Dayton, OH 45402</p>
+            <p class="muted" style="margin:0.4rem 0 0;font-size:0.9rem;">Downtown Dayton</p>
+          </div>
+
+          <div class="visit__block">
+            <div class="lbl">Hours</div>
+            <ul class="hours">
+              <li><span class="d">Mon to Thu</span><span class="t">11a to 2:30p &middot; 4 to 9p</span></li>
+              <li><span class="d">Friday</span><span class="t">11a to 2:30p &middot; 4 to 10p</span></li>
+              <li><span class="d">Saturday</span><span class="t">4 to 10p</span></li>
+              <li><span class="d">Sunday</span><span class="t closed">Closed</span></li>
+            </ul>
+            <p class="muted" style="margin:0.7rem 0 0;font-size:0.85rem;">Lunch served Monday to Friday, 11am to 2:30pm.</p>
+          </div>
+
+          <div class="visit__block">
+            <div class="lbl">Contact</div>
+            <p style="margin:0 0 0.35rem;"><a href="tel:+19379994047" style="font-family:var(--ff-display);font-size:1.4rem;color:var(--gold-hi);">(937) 999-4047</a></p>
+            <p style="margin:0 0 0.35rem;"><a href="mailto:theflavorhouse130@gmail.com">theflavorhouse130@gmail.com</a></p>
+            <p style="margin:0;"><a href="https://www.instagram.com/flavorhouse130/" target="_blank" rel="noopener">@flavorhouse130 on Instagram</a></p>
+          </div>
+
+          <div class="visit__ctas">
+            <a class="btn" href="#reserve">Reserve a table</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener">Get directions</a>
+          </div>
+        </div>
+
+        <div class="visit__map reveal" data-d="1">
+          <iframe
+            title="Map to The Flavor House at 130 West 2nd Street, Dayton, Ohio"
+            src="https://www.google.com/maps?q=130+W+2nd+St,+Dayton,+OH+45402&amp;output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- RESERVE -->
+      <div class="reserve reveal" id="reserve">
+        <div class="reserve__intro">
+          <h3 class="display">Reserve a <em>table.</em></h3>
+          <p>Walk-ins are always welcome. For weekends, larger parties, or a booth by the window, send a request below or call us directly and we'll take care of the rest.</p>
+          <a class="call" href="tel:+19379994047">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6.5 3.5 9 8l-2 1.5a12 12 0 0 0 5.5 5.5L14 13l4.5 2.5-1 3.5a2 2 0 0 1-2.2 1.4A16.5 16.5 0 0 1 3.6 8.7 2 2 0 0 1 5 6.5z"/></svg>
+            (937) 999-4047
+          </a>
+        </div>
+
+        <form class="rform" id="rform" novalidate>
+          <div>
+            <label for="r-name">Name</label>
+            <input id="r-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="r-party">Party size</label>
+            <select id="r-party" name="party">
+              <option>1</option><option>2</option><option selected>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option><option>9 or more</option>
+            </select>
+          </div>
+          <div>
+            <label for="r-date">Date</label>
+            <input id="r-date" name="date" type="date">
+          </div>
+          <div>
+            <label for="r-time">Time</label>
+            <input id="r-time" name="time" type="time">
+          </div>
+          <div class="full">
+            <label for="r-note">Anything we should know?</label>
+            <input id="r-note" name="note" type="text" placeholder="Occasion, seating preference, allergies">
+          </div>
+          <div class="full">
+            <button class="btn" type="submit">Send reservation request</button>
+          </div>
+          <p class="full muted" style="font-size:0.78rem;margin:0.2rem 0 0;">This opens your email so you can send the request to our team. We confirm every reservation by phone or email.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     11 · FOOTER
+     ============================================================ -->
+<footer class="foot" aria-labelledby="foot-h">
+  <h2 id="foot-h" class="skip">Site footer</h2>
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__seal">
+        <img src="assets/img/fh-monogram.jpg" alt="The Flavor House gold FH monogram crest reading Caribbean Creole Comfort Cuisine">
+        <p>Caribbean, Creole, and cocktail culture in downtown Dayton. Scratch, spice, and second helpings since 2021.</p>
+      </div>
+      <div class="foot__cols">
+        <div class="foot__col">
+          <h4>Explore</h4>
+          <a href="#signatures">Signatures</a>
+          <a href="#menu">Full menu</a>
+          <a href="#cocktails">Cocktails</a>
+          <a href="#events">Private events</a>
+        </div>
+        <div class="foot__col">
+          <h4>Visit</h4>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener">130 W 2nd St<br>Dayton, OH 45402</a>
+          <a href="tel:+19379994047">(937) 999-4047</a>
+          <a href="mailto:theflavorhouse130@gmail.com">theflavorhouse130@gmail.com</a>
+          <a href="https://www.instagram.com/flavorhouse130/" target="_blank" rel="noopener">@flavorhouse130</a>
+        </div>
+        <div class="foot__col">
+          <h4>Hours</h4>
+          <ul class="foot__hours">
+            <li><span>Mon to Thu</span><span>11a&ndash;2:30p, 4&ndash;9p</span></li>
+            <li><span>Friday</span><span>11a&ndash;2:30p, 4&ndash;10p</span></li>
+            <li><span>Saturday</span><span>4&ndash;10p</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot__bottom">
+      <span class="wordmark display">The Flavor <em>House</em></span>
+      <p>&copy; <span id="yr">2026</span> The Flavor House · Est. 2021 · Black-Owned · Dayton, Ohio</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Sticky nav state ---------- */
+  var topbar = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 40){ topbar.classList.add('is-stuck'); }
+    else{ topbar.classList.remove('is-stuck'); }
+  };
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* ---------- Mobile drawer ---------- */
+  var burger = document.getElementById('burger');
+  var mnav = document.getElementById('mnav');
+  var toggleNav = function(open){
+    var isOpen = (open !== undefined) ? open : burger.getAttribute('aria-expanded') !== 'true';
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    mnav.classList.toggle('is-open', isOpen);
+    mnav.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
+  burger.addEventListener('click', function(){ toggleNav(); });
+  mnav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ toggleNav(false); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mnav.classList.contains('is-open')){ toggleNav(false); burger.focus(); }
+  });
+
+  /* ---------- Menu tabs ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.tabpanel'));
+  var selectTab = function(tab){
+    tabs.forEach(function(t){
+      var sel = (t === tab);
+      t.setAttribute('aria-selected', String(sel));
+      t.tabIndex = sel ? 0 : -1;
+    });
+    panels.forEach(function(p){
+      p.hidden = (p.getAttribute('aria-labelledby') !== tab.id);
+    });
+  };
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ selectTab(tab); });
+    tab.addEventListener('keydown', function(e){
+      var idx = null;
+      if(e.key === 'ArrowRight'){ idx = (i + 1) % tabs.length; }
+      else if(e.key === 'ArrowLeft'){ idx = (i - 1 + tabs.length) % tabs.length; }
+      else if(e.key === 'Home'){ idx = 0; }
+      else if(e.key === 'End'){ idx = tabs.length - 1; }
+      if(idx !== null){ e.preventDefault(); selectTab(tabs[idx]); tabs[idx].focus(); }
+    });
+  });
+
+  /* ---------- Reservation form -> mailto ---------- */
+  var rform = document.getElementById('rform');
+  if(rform){
+    rform.addEventListener('submit', function(e){
+      e.preventDefault();
+      var g = function(id){ var el = document.getElementById(id); return el ? el.value : ''; };
+      var name = g('r-name') || 'Guest';
+      var body =
+        'Reservation request for The Flavor House' + '\n\n' +
+        'Name: ' + name + '\n' +
+        'Party size: ' + g('r-party') + '\n' +
+        'Date: ' + (g('r-date') || 'To confirm') + '\n' +
+        'Time: ' + (g('r-time') || 'To confirm') + '\n' +
+        'Notes: ' + (g('r-note') || 'None') + '\n';
+      var url = 'mailto:theflavorhouse130@gmail.com'
+        + '?subject=' + encodeURIComponent('Reservation Request - ' + name)
+        + '&body=' + encodeURIComponent(body);
+      window.location.href = url;
+    });
+  }
+
+  /* ---------- Year ---------- */
+  var yr = document.getElementById('yr');
+  if(yr){ yr.textContent = String(new Date().getFullYear()); }
+
+  /* ---------- Scroll reveal ---------- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
