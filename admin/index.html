@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Flavor House — Content Editor</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <!--
+      Sveltia CMS — lightweight version. This site is one static index.html, not a
+      structured JSON/build setup, so this editor gives you ONE raw-HTML field for
+      the whole page rather than per-section fields like the other MVUL builds have.
+      Fast to stand up, but there's nothing stopping an edit from breaking the page's
+      HTML structure. Treat this as a stopgap until the real field-by-field CMS
+      (matching Stanford Electric / Fête) gets built.
+      Edits commit directly to theflavorhouse130/flavor-house on GitHub.
+      Netlify does NOT auto-rebuild on push for a static site with no build step —
+      the published files ARE the repo, so a push is live as soon as Netlify
+      re-syncs (near-instant, no build to wait on).
+    -->
+    <script type="module" src="https://unpkg.com/@sveltia/cms@^0.43/dist/sveltia-cms.js"></script>
+  </head>
+  <body>
+    <!-- The CMS shell mounts itself here. -->
+  </body>
+</html>

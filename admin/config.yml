@@ -1,0 +1,46 @@
+# Sveltia CMS config — The Flavor House (lightweight/stopgap version)
+#
+# Backend: GitHub, via our own OAuth proxy at netlify/functions/auth.js
+# (env vars OAUTH_CLIENT_ID / OAUTH_CLIENT_SECRET must be set on the Netlify project).
+# Editor account must have write access to theflavorhouse130/flavor-house.
+#
+# ⚠️ base_url / site_url / display_url below are PLACEHOLDERS. Once the site is
+# deployed on Netlify (even on the temporary *.netlify.app subdomain), replace every
+# occurrence of PLACEHOLDER-NETLIFY-URL with that real URL, in this file AND in the
+# GitHub OAuth App's callback URL. Register the OAuth App against the Netlify
+# subdomain first, not the final flavorhouse130.com domain — DNS won't be resolving
+# yet, and this lets the CMS work (and get tested) immediately after first deploy.
+#
+# ⚠️ This is the STOPGAP CMS: one raw-HTML field for the whole page, not per-section
+# fields. A bad edit here can break the page. The proper version (matching Stanford
+# Electric / Fête — structured JSON, field-by-field editing) is still a to-do, not
+# done. Don't mistake this config for that.
+
+backend:
+  name: github
+  repo: theflavorhouse130/flavor-house
+  branch: main
+  base_url: https://PLACEHOLDER-NETLIFY-URL
+  auth_endpoint: .netlify/functions/auth
+
+media_folder: assets/img
+public_folder: assets/img
+
+site_url: https://PLACEHOLDER-NETLIFY-URL
+display_url: https://PLACEHOLDER-NETLIFY-URL
+logo_url: https://PLACEHOLDER-NETLIFY-URL/assets/img/fh-monogram.jpg
+
+collections:
+  - name: pages
+    label: Website
+    files:
+      - name: home
+        label: Homepage (raw HTML — edit with care)
+        file: index.html
+        fields:
+          - name: body
+            label: Full page HTML
+            widget: code
+            default_language: html
+            allow_language_selection: false
+            output_code_only: true
