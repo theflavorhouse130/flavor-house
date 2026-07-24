@@ -14,12 +14,13 @@
 
   Required GitHub OAuth app (https://github.com/settings/developers → New OAuth App),
   created under the theflavorhouse130 account:
-    Homepage URL:               https://<your-netlify-subdomain>.netlify.app
-    Authorization callback URL: https://<your-netlify-subdomain>.netlify.app/.netlify/functions/auth/callback
+    Homepage URL:               https://zingy-sprite-a1e2eb.netlify.app
+    Authorization callback URL: https://zingy-sprite-a1e2eb.netlify.app/.netlify/functions/auth/callback
 
-  Register against the temporary *.netlify.app subdomain first, not flavorhouse130.com —
-  DNS won't be live yet, and GitHub OAuth Apps accept multiple callback URLs, so the
-  real domain's callback can be added later without breaking this one.
+  Registered against the *.netlify.app subdomain rather than flavorhouse130.com — its
+  SSL cert is guaranteed live, while the custom domain's may still be provisioning.
+  GitHub OAuth Apps accept multiple callback URLs, so add flavorhouse130.com/... later
+  once its HTTPS is confirmed working, without breaking this one.
 
   Scope of the token is governed by Sveltia's request — typically "repo,user".
   Token is NEVER stored server-side; it lives only in the browser session.
