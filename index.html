@@ -661,7 +661,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 3.5 9 8l-2 1.5a12 12 0 0 0 5.5 5.5L14 13l4.5 2.5-1 3.5a2 2 0 0 1-2.2 1.4A16.5 16.5 0 0 1 3.6 8.7 2 2 0 0 1 5 6.5z"/></svg>
           <span class="txt" data-phone-text>(937) 999-4047</span>
         </a>
-        <a class="btn btn--sm" href="#reserve">Reserve</a>
+        <a class="btn btn--sm" href="tel:+19379994047" data-phone-tel-link>Call us</a>
       </div>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
         <span></span><span></span><span></span>
@@ -677,8 +677,7 @@
   <a href="#events">Events</a>
   <a href="#visit">Visit</a>
   <div class="mnav__cta">
-    <a class="btn" href="#reserve">Reserve a table</a>
-    <a class="btn btn--ghost" href="tel:+19379994047" data-phone-tel-link>Call <span data-phone-text>(937) 999-4047</span></a>
+    <a class="btn" href="tel:+19379994047" data-phone-tel-link>Call <span data-phone-text>(937) 999-4047</span></a>
   </div>
 </div>
 
@@ -702,7 +701,7 @@
       <h1 class="display" data-hero="headline">Scratch, spice, and <em>second helpings.</em></h1>
       <p class="hero__sub" data-hero="sub">An upscale Caribbean and Creole kitchen, a full cocktail lounge, and a private room for the whole celebration, in the heart of downtown Dayton.</p>
       <div class="hero__actions">
-        <a class="btn" href="#reserve">Reserve a table</a>
+        <a class="btn" href="tel:+19379994047" data-phone-tel-link>Call us</a>
         <a class="btn btn--ghost" href="#menu">See the menu</a>
       </div>
       <div class="hero__meta">
@@ -900,7 +899,7 @@
           </div>
 
           <div class="visit__ctas">
-            <a class="btn" href="#reserve">Reserve a table</a>
+            <a class="btn" href="tel:+19379994047" data-phone-tel-link>Call us</a>
             <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener" data-maps-link>Get directions</a>
           </div>
         </div>
@@ -913,51 +912,15 @@
         </div>
       </div>
 
-      <!-- RESERVE -->
-      <div class="reserve reveal" id="reserve">
+      <!-- CALL CALLOUT (no reservations taken, walk-in only) -->
+      <div class="reserve reveal" id="reserve" style="grid-template-columns:1fr; max-width:640px; margin-inline:auto; text-align:center;">
         <div class="reserve__intro">
-          <h3 class="display">Reserve a <em>table.</em></h3>
-          <p>Walk-ins are always welcome. For weekends, larger parties, or a booth by the window, send a request below or call us directly and we'll take care of the rest.</p>
-          <a class="call" href="tel:+19379994047" data-phone-tel-link>
+          <h3 class="display">Come as you <em>are.</em></h3>
+          <p>Walk-ins are always welcome, no reservation needed. For larger parties or any questions, give us a call.</p>
+          <a class="call" href="tel:+19379994047" data-phone-tel-link style="justify-content:center;">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6.5 3.5 9 8l-2 1.5a12 12 0 0 0 5.5 5.5L14 13l4.5 2.5-1 3.5a2 2 0 0 1-2.2 1.4A16.5 16.5 0 0 1 3.6 8.7 2 2 0 0 1 5 6.5z"/></svg>
             <span data-phone-text>(937) 999-4047</span>
           </a>
-        </div>
-
-        <form class="rform" id="rform" name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-          <input type="hidden" name="form-name" value="reservation">
-          <p class="full" style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
-          <div>
-            <label for="r-name">Name</label>
-            <input id="r-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
-          </div>
-          <div>
-            <label for="r-party">Party size</label>
-            <select id="r-party" name="party">
-              <option>1</option><option>2</option><option selected>3</option><option>4</option>
-              <option>5</option><option>6</option><option>7</option><option>8</option><option>9 or more</option>
-            </select>
-          </div>
-          <div>
-            <label for="r-date">Date</label>
-            <input id="r-date" name="date" type="date">
-          </div>
-          <div>
-            <label for="r-time">Time</label>
-            <input id="r-time" name="time" type="time">
-          </div>
-          <div class="full">
-            <label for="r-note">Anything we should know?</label>
-            <input id="r-note" name="note" type="text" placeholder="Occasion, seating preference, allergies">
-          </div>
-          <div class="full">
-            <button class="btn" type="submit">Send reservation request</button>
-          </div>
-          <p class="full muted" style="font-size:0.78rem;margin:0.2rem 0 0;">This sends straight to our team. We confirm every reservation by phone or email.</p>
-        </form>
-        <div class="rform-success" id="rform-success" hidden style="text-align:center;padding:2rem 1rem;">
-          <h3 class="display" style="margin-bottom:0.6rem;">Request sent.</h3>
-          <p class="muted">Thanks — we'll confirm by phone or email shortly.</p>
         </div>
       </div>
     </div>

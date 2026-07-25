@@ -302,53 +302,6 @@
     });
   }
 
-  function wireReservationForm(business){
-    var rform = document.getElementById('rform');
-    var successEl = document.getElementById('rform-success');
-    if(!rform){ return; }
-
-    function encodeFormData(form){
-      var data = new FormData(form);
-      var params = [];
-      data.forEach(function(value, key){
-        params.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
-      });
-      return params.join('&');
-    }
-
-    function mailtoFallback(){
-      var g = function(id){ var el = document.getElementById(id); return el ? el.value : ''; };
-      var name = g('r-name') || 'Guest';
-      var body =
-        'Reservation request for The Flavor House' + '\n\n' +
-        'Name: ' + name + '\n' +
-        'Party size: ' + g('r-party') + '\n' +
-        'Date: ' + (g('r-date') || 'To confirm') + '\n' +
-        'Time: ' + (g('r-time') || 'To confirm') + '\n' +
-        'Notes: ' + (g('r-note') || 'None') + '\n';
-      var url = 'mailto:' + business.email
-        + '?subject=' + encodeURIComponent('Reservation Request - ' + name)
-        + '&body=' + encodeURIComponent(body);
-      window.location.href = url;
-    }
-
-    rform.addEventListener('submit', function(e){
-      e.preventDefault();
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encodeFormData(rform)
-      }).then(function(res){
-        if(!res.ok){ throw new Error('Form submission failed: ' + res.status); }
-        rform.hidden = true;
-        if(successEl){ successEl.hidden = false; }
-      }).catch(function(err){
-        console.error('Netlify form submission failed, falling back to email:', err);
-        mailtoFallback();
-      });
-    });
-  }
-
   function wireYear(){
     var yr = document.getElementById('yr');
     if(yr){ yr.textContent = String(new Date().getFullYear()); }
@@ -401,7 +354,6 @@
     wireStickyNav();
     wireMobileNav();
     wireTabs();
-    wireReservationForm(business);
     wireYear();
     wireScrollReveal();
   }).catch(function(err){
