@@ -41,7 +41,5 @@ collections:
         fields:
           - name: body
             label: Full page HTML
-            widget: code
-            default_language: html
-            allow_language_selection: false
-            output_code_only: true
+            widget: text
+            hint: "This is the entire page's raw HTML. A misplaced tag can break the page — save often and check the live site after saving."
