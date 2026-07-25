@@ -1,0 +1,13 @@
+{
+  "heroPoster": { "src": "assets/img/hero-dining-poster.jpg" },
+  "heroVideo": { "src": "assets/video/hero-dining.mp4" },
+  "introPhoto": { "src": "assets/img/interior-window.jpg", "alt": "A host in a white blazer standing by tall downtown windows in the warm, candlelit dining room of The Flavor House" },
+  "signatureMainPhoto": { "src": "assets/img/plate-hearty.jpg", "alt": "A hearty plate of sliced, seasoned meat fanned over golden Caribbean rice, finished with a parmesan cream sauce" },
+  "signatureTile1Photo": { "src": "assets/img/plate-signature.jpg", "alt": "A signature plate of grilled protein over rice with a rich cream sauce" },
+  "signatureTile2Photo": { "src": "assets/img/table-spread.jpg", "alt": "An overhead spread of six Flavor House dishes showing the range of the menu" },
+  "cocktailsBgPoster": { "src": "assets/img/cocktail-bar-poster.jpg" },
+  "cocktailsBgVideo": { "src": "assets/video/cocktail-bar.mp4" },
+  "cocktailsPhoto": { "src": "assets/img/cocktail-amber.jpg", "alt": "An amber cocktail being poured over ice at the Flavor House bar, backlit and glowing" },
+  "eventsPhoto": { "src": "assets/img/interior-dining.jpg", "alt": "The Flavor House dining room set with warm pendant lights and greenery, ready for a private gathering" },
+  "footerLogo": { "src": "assets/img/fh-monogram-footer.jpg" }
+}

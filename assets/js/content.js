@@ -223,6 +223,27 @@
     }
   }
 
+  /* ---------- Images & background videos ---------- */
+  function renderImages(images){
+    document.querySelectorAll('img[data-image]').forEach(function(img){
+      var data = images[img.getAttribute('data-image')];
+      if(!data){ return; }
+      img.src = data.src;
+      if(data.alt !== undefined && data.alt !== ''){ img.alt = data.alt; }
+    });
+    document.querySelectorAll('video[data-video]').forEach(function(video){
+      var data = images[video.getAttribute('data-video')];
+      if(data){
+        var source = video.querySelector('source');
+        if(source){ source.src = data.src; }
+        video.load();
+      }
+      var posterKey = video.getAttribute('data-video-poster');
+      var posterData = posterKey ? images[posterKey] : null;
+      if(posterData){ video.poster = posterData.src; }
+    });
+  }
+
   /* ---------- Interactive behavior (runs after content is in the DOM) ---------- */
   function wireStickyNav(){
     var topbar = document.getElementById('top');
@@ -334,10 +355,12 @@
     fetchJSON('content/menu.json'),
     fetchJSON('content/cocktails.json'),
     fetchJSON('content/events.json'),
-    fetchJSON('content/hours.json')
+    fetchJSON('content/hours.json'),
+    fetchJSON('content/images.json')
   ]).then(function(results){
     var business = results[0], hero = results[1], intro = results[2], signatures = results[3],
-        menu = results[4], cocktails = results[5], events = results[6], hours = results[7];
+        menu = results[4], cocktails = results[5], events = results[6], hours = results[7],
+        images = results[8];
 
     applyBusinessInfo(business);
     renderHero(hero);
@@ -347,6 +370,7 @@
     renderCocktails(cocktails);
     renderEvents(events);
     renderHours(hours);
+    renderImages(images);
 
     wireStickyNav();
     wireMobileNav();

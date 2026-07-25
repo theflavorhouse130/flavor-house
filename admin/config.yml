@@ -183,3 +183,72 @@ collections:
               - { name: label, label: "Day(s)", widget: string, hint: "e.g. Mon to Thu, or Sunday" }
               - { name: time, label: "Hours", widget: string, hint: "e.g. 11a to 2:30p · 4 to 9p, or Closed" }
               - { name: closed, label: "Closed this day?", widget: boolean, default: false }
+
+      - name: images
+        label: "Photos & Videos"
+        file: content/images.json
+        fields:
+          - name: heroPoster
+            label: "Hero background photo"
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+          - name: heroVideo
+            label: "Hero background video (optional, plays over the photo above)"
+            widget: object
+            hint: "Changing this replaces the moving background behind the homepage headline. Watch the whole clip before uploading — check it doesn't show anything that contradicts what the site says (e.g. events or programming you don't actually run)."
+            fields:
+              - { name: src, label: Video file, widget: file }
+          - name: introPhoto
+            label: "\"More than a restaurant\" section photo"
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: "Alt text (describe the photo for accessibility)", widget: string, required: false }
+          - name: signatureMainPhoto
+            label: "Signature Dishes — large photo"
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: "Alt text", widget: string, required: false }
+          - name: signatureTile1Photo
+            label: "Signature Dishes — small photo 1 (\"Chicken Fontaine\" tile)"
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: "Alt text", widget: string, required: false }
+          - name: signatureTile2Photo
+            label: "Signature Dishes — small photo 2 (\"Family-Style Spreads\" tile)"
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: "Alt text", widget: string, required: false }
+          - name: cocktailsBgPoster
+            label: "Cocktails section background photo"
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+          - name: cocktailsBgVideo
+            label: "Cocktails section background video (optional, plays over the photo above)"
+            widget: object
+            hint: "Same caution as the hero video — watch the full clip before uploading."
+            fields:
+              - { name: src, label: Video file, widget: file }
+          - name: cocktailsPhoto
+            label: "Cocktails section side photo"
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: "Alt text", widget: string, required: false }
+          - name: eventsPhoto
+            label: "Private Events section photo"
+            widget: object
+            fields:
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: "Alt text", widget: string, required: false }
+          - name: footerLogo
+            label: "Footer logo / crest"
+            widget: object
+            hint: "Square image works best here — it's cropped into a small square in the footer."
+            fields:
+              - { name: src, label: Logo image, widget: image }
