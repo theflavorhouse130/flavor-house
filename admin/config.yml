@@ -4,11 +4,12 @@
 # (env vars OAUTH_CLIENT_ID / OAUTH_CLIENT_SECRET must be set on the Netlify project).
 # Editor account must have write access to theflavorhouse130/flavor-house.
 #
-# base_url / site_url / display_url below point at the live Netlify subdomain
-# (zingy-sprite-a1e2eb.netlify.app), deliberately NOT flavorhouse130.com. Register the
-# GitHub OAuth App's callback against this same subdomain — its SSL cert is guaranteed
-# live, whereas the custom domain's cert may still be provisioning. Add the custom
-# domain as a second OAuth callback URL later once its HTTPS is confirmed working.
+# base_url / site_url / display_url below point at flavorhouse130.com, matching the
+# GitHub OAuth App's registered callback (https://flavorhouse130.com/.netlify/functions/
+# auth/callback — SSL confirmed live). Must always match whatever callback URL(s) are
+# actually registered on the OAuth App, or GitHub rejects the login with a redirect_uri
+# mismatch — the auth Function builds its callback dynamically from whatever domain it's
+# accessed through, so this value IS what gets sent to GitHub.
 #
 # ⚠️ This is the STOPGAP CMS: one raw-HTML field for the whole page, not per-section
 # fields. A bad edit here can break the page. The proper version (matching Stanford
@@ -19,15 +20,15 @@ backend:
   name: github
   repo: theflavorhouse130/flavor-house
   branch: main
-  base_url: https://zingy-sprite-a1e2eb.netlify.app
+  base_url: https://flavorhouse130.com
   auth_endpoint: .netlify/functions/auth
 
 media_folder: assets/img
 public_folder: assets/img
 
-site_url: https://zingy-sprite-a1e2eb.netlify.app
-display_url: https://zingy-sprite-a1e2eb.netlify.app
-logo_url: https://zingy-sprite-a1e2eb.netlify.app/assets/img/fh-monogram.jpg
+site_url: https://flavorhouse130.com
+display_url: https://flavorhouse130.com
+logo_url: https://flavorhouse130.com/assets/img/fh-monogram.jpg
 
 collections:
   - name: pages

@@ -12,15 +12,14 @@
     OAUTH_CLIENT_ID      — GitHub OAuth app Client ID
     OAUTH_CLIENT_SECRET  — GitHub OAuth app Client secret
 
-  Required GitHub OAuth app (https://github.com/settings/developers → New OAuth App),
-  created under the theflavorhouse130 account:
-    Homepage URL:               https://zingy-sprite-a1e2eb.netlify.app
-    Authorization callback URL: https://zingy-sprite-a1e2eb.netlify.app/.netlify/functions/auth/callback
+  GitHub OAuth app ("flavorhouse", owned by theflavorhouse130):
+    Homepage URL:               https://flavorhouse130.com
+    Authorization callback URL: https://flavorhouse130.com/.netlify/functions/auth/callback
 
-  Registered against the *.netlify.app subdomain rather than flavorhouse130.com — its
-  SSL cert is guaranteed live, while the custom domain's may still be provisioning.
-  GitHub OAuth Apps accept multiple callback URLs, so add flavorhouse130.com/... later
-  once its HTTPS is confirmed working, without breaking this one.
+  This MUST match admin/config.yml's base_url — the callback this function sends to
+  GitHub is built from whatever domain it's accessed through, so config.yml and the
+  OAuth App's registered callback have to name the same domain or GitHub rejects the
+  login with a redirect_uri mismatch.
 
   Scope of the token is governed by Sveltia's request — typically "repo,user".
   Token is NEVER stored server-side; it lives only in the browser session.
