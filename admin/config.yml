@@ -28,7 +28,7 @@ public_folder: assets/img
 
 site_url: https://flavorhouse130.com
 display_url: https://flavorhouse130.com
-logo_url: https://flavorhouse130.com/assets/img/fh-monogram.jpg
+logo_url: https://flavorhouse130.com/assets/img/fh-monogram-footer.jpg
 
 collections:
   - name: pages
@@ -37,6 +37,7 @@ collections:
       - name: home
         label: Homepage (raw HTML — edit with care)
         file: index.html
+        format: frontmatter
         fields:
           - name: body
             label: Full page HTML
