@@ -657,9 +657,9 @@
         <li><a href="#visit">Visit</a></li>
       </ul>
       <div class="nav__cta">
-        <a class="nav__call" href="tel:+19379994047" aria-label="Call The Flavor House at (937) 999-4047">
+        <a class="nav__call" href="tel:+19379994047" aria-label="Call The Flavor House" data-phone-tel-link>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 3.5 9 8l-2 1.5a12 12 0 0 0 5.5 5.5L14 13l4.5 2.5-1 3.5a2 2 0 0 1-2.2 1.4A16.5 16.5 0 0 1 3.6 8.7 2 2 0 0 1 5 6.5z"/></svg>
-          <span class="txt">(937) 999-4047</span>
+          <span class="txt" data-phone-text>(937) 999-4047</span>
         </a>
         <a class="btn btn--sm" href="#reserve">Reserve</a>
       </div>
@@ -678,7 +678,7 @@
   <a href="#visit">Visit</a>
   <div class="mnav__cta">
     <a class="btn" href="#reserve">Reserve a table</a>
-    <a class="btn btn--ghost" href="tel:+19379994047">Call (937) 999-4047</a>
+    <a class="btn btn--ghost" href="tel:+19379994047" data-phone-tel-link>Call <span data-phone-text>(937) 999-4047</span></a>
   </div>
 </div>
 
@@ -698,19 +698,19 @@
     <div class="hero__scrim" aria-hidden="true"></div>
 
     <div class="wrap hero__inner">
-      <p class="eyebrow hero__eyebrow">Caribbean · Creole · Cocktail Culture · Downtown Dayton</p>
-      <h1 class="display">Scratch, spice, and <em>second helpings.</em></h1>
-      <p class="hero__sub">An upscale Caribbean and Creole kitchen, a full cocktail lounge, and a private room for the whole celebration, in the heart of downtown Dayton.</p>
+      <p class="eyebrow hero__eyebrow" data-hero="eyebrow">Caribbean · Creole · Cocktail Culture · Downtown Dayton</p>
+      <h1 class="display" data-hero="headline">Scratch, spice, and <em>second helpings.</em></h1>
+      <p class="hero__sub" data-hero="sub">An upscale Caribbean and Creole kitchen, a full cocktail lounge, and a private room for the whole celebration, in the heart of downtown Dayton.</p>
       <div class="hero__actions">
         <a class="btn" href="#reserve">Reserve a table</a>
         <a class="btn btn--ghost" href="#menu">See the menu</a>
       </div>
       <div class="hero__meta">
-        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener">130 W 2nd St, Dayton, OH</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener" data-maps-link data-address-text>130 W 2nd St, Dayton, OH</a>
         <span class="dot" aria-hidden="true">·</span>
-        <a href="tel:+19379994047">(937) 999-4047</a>
+        <a href="tel:+19379994047" data-phone-tel-link data-phone-text>(937) 999-4047</a>
         <span class="dot" aria-hidden="true">·</span>
-        <span>Lunch &amp; Dinner · Est. 2021</span>
+        <span data-hero="metaLine">Lunch &amp; Dinner · Est. 2021</span>
       </div>
     </div>
 
@@ -719,14 +719,7 @@
 
   <!-- TRUST STRIP -->
   <div class="strip" aria-label="At a glance">
-    <div class="wrap strip__row">
-      <span class="g">Est. 2021</span><span class="sep">/</span>
-      <span>Black-Owned</span><span class="sep">/</span>
-      <span>Trinidad-Rooted Kitchen</span><span class="sep">/</span>
-      <span>Cocktail Lounge</span><span class="sep">/</span>
-      <span>Cigar Patio</span><span class="sep">/</span>
-      <span class="g">Downtown Dayton</span>
-    </div>
+    <div class="wrap strip__row" data-trust-strip></div>
   </div>
 
   <!-- ============================================================
@@ -736,10 +729,10 @@
     <div class="wrap">
       <div class="intro__grid">
         <div class="intro__copy reveal">
-          <p class="eyebrow">A swank environment</p>
-          <h2 id="intro-h" class="display">More than a restaurant. <em>It's a vibe.</em></h2>
-          <p>The Flavor House is where Trinidad kitchens meet a downtown Dayton corner. Scotch bonnet, green seasoning, and slow-stewed oxtail, woven through with Creole and soul-food tradition, and served in a room designed for a slow evening and a good crowd.</p>
-          <p>Come for a lunch plate. Stay for a craft cocktail and real hospitality. Warm pendant light, low music, and a unique dining experience with flavorful, from-scratch food and superior service.</p>
+          <p class="eyebrow" data-intro="eyebrow">A swank environment</p>
+          <h2 id="intro-h" class="display" data-intro="headline">More than a restaurant. <em>It's a vibe.</em></h2>
+          <p data-intro="paragraph1">The Flavor House is where Trinidad kitchens meet a downtown Dayton corner. Scotch bonnet, green seasoning, and slow-stewed oxtail, woven through with Creole and soul-food tradition, and served in a room designed for a slow evening and a good crowd.</p>
+          <p data-intro="paragraph2">Come for a lunch plate. Stay for a craft cocktail and real hospitality. Warm pendant light, low music, and a unique dining experience with flavorful, from-scratch food and superior service.</p>
         </div>
         <figure class="intro__media reveal" data-d="1">
           <img src="assets/img/interior-window.jpg" alt="A host in a white blazer standing by tall downtown windows in the warm, candlelit dining room of The Flavor House">
@@ -750,23 +743,7 @@
         </figure>
       </div>
 
-      <div class="pillars">
-        <div class="pillar reveal">
-          <span class="k">The Kitchen</span>
-          <h3 class="display">Caribbean &amp; Creole</h3>
-          <p>Cooked from scratch. Gumbo, oxtail, rum-glazed salmon, curry roti, and Signature baked mac. No shortcuts.</p>
-        </div>
-        <div class="pillar reveal" data-d="1">
-          <span class="k">The Lounge</span>
-          <h3 class="display">Cocktail Culture</h3>
-          <p>A full bar of house cocktails and top-shelf spirits. Happy Hour every day, 4 to 6PM, half off the good stuff.</p>
-        </div>
-        <div class="pillar reveal" data-d="2">
-          <span class="k">The Patio &amp; Room</span>
-          <h3 class="display">Cigars &amp; Celebrations</h3>
-          <p>A cigar patio and a connected private room built for showers, mixers, and the whole family.</p>
-        </div>
-      </div>
+      <div class="pillars" data-pillars></div>
     </div>
   </section>
 
@@ -776,9 +753,9 @@
   <section class="section sig" id="signatures" aria-labelledby="sig-h">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">From the kitchen</p>
-        <h2 id="sig-h" class="display">The plates we're <em>known for.</em></h2>
-        <p>A handful of the dishes regulars come back for, and the ones that keep the foodie tastings talking. Every plate is built from scratch, spiced with intent, and portioned for second helpings.</p>
+        <p class="eyebrow" data-sig="eyebrow">From the kitchen</p>
+        <h2 id="sig-h" class="display" data-sig="headline">The plates we're <em>known for.</em></h2>
+        <p data-sig="intro">A handful of the dishes regulars come back for, and the ones that keep the foodie tastings talking. Every plate is built from scratch, spiced with intent, and portioned for second helpings.</p>
       </div>
 
       <div class="sig__grid">
@@ -787,32 +764,7 @@
           <figcaption>House Signature · Over Caribbean rice</figcaption>
         </figure>
 
-        <ul class="sig__list reveal" data-d="1">
-          <li class="sig__item">
-            <div class="sig__row">
-              <h3 class="sig__name display">Flavor House Gumbo <span class="fav" title="House favorite" aria-label="House favorite">&#9733;</span></h3>
-            </div>
-            <p class="sig__desc">Crab legs, chicken, andouille, shrimp, and okra with onions and peppers, ladled over yellow Caribbean rice.</p>
-          </li>
-          <li class="sig__item">
-            <div class="sig__row">
-              <h3 class="sig__name display">Oxtail Sandwich <span class="fav" title="House favorite" aria-label="House favorite">&#9733;</span></h3>
-            </div>
-            <p class="sig__desc">Slow-braised oxtail and dijon on toasted brioche, served with fries. The Trinidad classic, handheld.</p>
-          </li>
-          <li class="sig__item">
-            <div class="sig__row">
-              <h3 class="sig__name display">Caribbean Rum Glazed Salmon <span class="fav" title="House favorite" aria-label="House favorite">&#9733;</span></h3>
-            </div>
-            <p class="sig__desc">Grilled rum-glazed salmon over garlic mash with green beans. Sweet heat, clean finish.</p>
-          </li>
-          <li class="sig__item">
-            <div class="sig__row">
-              <h3 class="sig__name display">Portobello Dian <span class="fav" title="House favorite" aria-label="House favorite">&#9733;</span></h3>
-            </div>
-            <p class="sig__desc">Grilled portobello with onions and peppers over Caribbean rice, finished in parmesan cream. The vegetarian showpiece.</p>
-          </li>
-        </ul>
+        <ul class="sig__list reveal" data-d="1" data-sig-list></ul>
       </div>
 
       <div class="sig__foot reveal">
@@ -845,101 +797,17 @@
   <section class="section menu" id="menu" aria-labelledby="menu-h">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">The full table</p>
-        <h2 id="menu-h" class="display">The <em>menu.</em></h2>
-        <p>Starters to sweets, greens to gumbo. Lunch is served Monday to Friday, 11am to 2:30pm, with dinner every evening.</p>
+        <p class="eyebrow" data-menu="eyebrow">The full table</p>
+        <h2 id="menu-h" class="display" data-menu="headline">The <em>menu.</em></h2>
+        <p data-menu="intro">Starters to sweets, greens to gumbo. Lunch is served Monday to Friday, 11am to 2:30pm, with dinner every evening.</p>
       </div>
 
-      <div class="tabs reveal" role="tablist" aria-label="Menu categories">
-        <button class="tab" role="tab" id="tab-starters" aria-controls="panel-starters" aria-selected="true">Starters</button>
-        <button class="tab" role="tab" id="tab-greens" aria-controls="panel-greens" aria-selected="false" tabindex="-1">Greens &amp; Salads</button>
-        <button class="tab" role="tab" id="tab-veg" aria-controls="panel-veg" aria-selected="false" tabindex="-1">Vegetarian</button>
-        <button class="tab" role="tab" id="tab-hand" aria-controls="panel-hand" aria-selected="false" tabindex="-1">Handhelds</button>
-        <button class="tab" role="tab" id="tab-mains" aria-controls="panel-mains" aria-selected="false" tabindex="-1">Mains</button>
-        <button class="tab" role="tab" id="tab-sides" aria-controls="panel-sides" aria-selected="false" tabindex="-1">Sides</button>
-        <button class="tab" role="tab" id="tab-desserts" aria-controls="panel-desserts" aria-selected="false" tabindex="-1">Desserts</button>
-      </div>
+      <div class="tabs reveal" role="tablist" aria-label="Menu categories" data-menu-tabs></div>
 
-      <!-- STARTERS -->
-      <div class="tabpanel" id="panel-starters" role="tabpanel" aria-labelledby="tab-starters" tabindex="0">
-        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Rolls <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">Collard greens, cabbage, and roasted chicken in an egg roll, with sweet chili dip. Veg style available.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Creamy Collard Green Dip <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">A southern twist on spinach dip, served with house pita chips.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Chicken Wings</span></div><p class="m-item__desc">Ten wings, any flavor: bbq, lemon pepper, hot, spicy garlic, or FH gold.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Salmon Bites</span></div><p class="m-item__desc">Cajun fried salmon bites with sweet chili dip.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Southern Fried Okra</span></div><p class="m-item__desc">Battered, fried, and tossed in lemon pepper.</p></li>
-        </ul>
-      </div>
-
-      <!-- GREENS -->
-      <div class="tabpanel" id="panel-greens" role="tabpanel" aria-labelledby="tab-greens" tabindex="0" hidden>
-        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Cranberry Walnut Salad</span></div><p class="m-item__desc">Mixed greens, feta, cucumbers, cranberries, and walnuts with raspberry vinaigrette.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Caesar</span></div><p class="m-item__desc">Romaine, parmesan, and croutons with housemade caesar.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Salad</span></div><p class="m-item__desc">Mixed greens, tomatoes, red onions, and cucumbers with housemade ranch.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Add a Protein</span></div><p class="m-item__desc">Grilled chicken $8, shrimp $10, or salmon $12 on any salad.</p></li>
-        </ul>
-      </div>
-
-      <!-- VEG -->
-      <div class="tabpanel" id="panel-veg" role="tabpanel" aria-labelledby="tab-veg" tabindex="0" hidden>
-        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Portobello Dian <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">Grilled portobello with onions and peppers over Caribbean rice, finished in parmesan cream sauce.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Chickpeas &amp; Potatoes with Roti</span></div><p class="m-item__desc">A curry coconut-milk stew with homemade roti. Protein available.</p></li>
-        </ul>
-      </div>
-
-      <!-- HANDHELDS -->
-      <div class="tabpanel" id="panel-hand" role="tabpanel" aria-labelledby="tab-hand" tabindex="0" hidden>
-        <p class="m-note" style="margin-bottom:1rem;">Served with fries. Add truffle fries for $2.</p>
-        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Oxtail Sandwich <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">Braised oxtail and dijon on toasted brioche.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Jerk Burger <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">Beef, pepperjack, lettuce, onions, tomato, pickles, and Caribbean bbq on brioche.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Sweet Chili Shrimp Po' Boy</span></div><p class="m-item__desc">Cajun fried shrimp, sweet chili, and lettuce on a pistolette.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Crispy Chicken Sandwich</span></div><p class="m-item__desc">Cajun fried chicken, lettuce, pickle, and FH sauce on brioche.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Salmon Burger</span></div><p class="m-item__desc">Grilled salmon patty, cheese, lettuce, pickles, and FH sauce on brioche.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Burger</span></div><p class="m-item__desc">Beef, cheese, lettuce, tomato, onions, pickles, and mayo on brioche.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Turkey Burger</span></div><p class="m-item__desc">Turkey patty, cheese, lettuce, tomato, pickles, onions, and bourbon sauce on brioche.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Double Bourbon Burger</span></div><p class="m-item__desc">Two beef patties, cheese, veg, and Kentucky bourbon sauce on brioche.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Cheesesteak</span></div><p class="m-item__desc">Provolone, veg, banana peppers, and mayo on a pistolette. Chicken $16, beef $17, salmon $18.</p></li>
-        </ul>
-      </div>
-
-      <!-- MAINS -->
-      <div class="tabpanel" id="panel-mains" role="tabpanel" aria-labelledby="tab-mains" tabindex="0" hidden>
-        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Flavor House Gumbo <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">Crab legs, chicken, andouille, shrimp, okra, onions, and peppers over Caribbean rice.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Cajun Fried Fish &amp; Shrimp Basket <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">Cajun fried fish and shrimp with fries.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Caribbean Rum Glazed Salmon <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">Grilled rum-glazed salmon with garlic mash and green beans.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Chicken Fontaine</span></div><p class="m-item__desc">Grilled chicken, portobello, onions, and peppers in parmesan cream over garlic mash.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Creamy Alfredo</span></div><p class="m-item__desc">Fettuccine in parmesan cream with garlic bread. Chicken $18, shrimp $20.</p></li>
-        </ul>
-      </div>
-
-      <!-- SIDES -->
-      <div class="tabpanel" id="panel-sides" role="tabpanel" aria-labelledby="tab-sides" tabindex="0" hidden>
-        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Signature Baked Mac &amp; Cheese <span class="fav" aria-label="House favorite">&#9733;</span></span></div></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Yellow Caribbean Rice</span></div></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Collard Greens</span></div></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Garlic Mashed Potatoes</span></div></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Green Beans</span></div></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Black Beans &amp; Rice</span></div></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Black Beans</span></div></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Fries</span></div><p class="m-item__desc">Add truffle for $9.</p></li>
-        </ul>
-      </div>
-
-      <!-- DESSERTS -->
-      <div class="tabpanel" id="panel-desserts" role="tabpanel" aria-labelledby="tab-desserts" tabindex="0" hidden>
-        <ul class="menu__cols" style="list-style:none;margin:0;padding:0;">
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Sweet Potato Cheesecake <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="m-item__desc">The house finish, southern and rich.</p></li>
-          <li class="m-item"><div class="m-item__head"><span class="m-item__name display">Triple Chocolate Extraordinaire</span></div><p class="m-item__desc">For the deep chocolate crowd.</p></li>
-        </ul>
-      </div>
+      <div data-menu-panels></div>
 
       <div class="menu__foot reveal">
-        <p class="gr">Parties of 6 or more add an 18% gratuity.</p>
+        <p class="gr" data-menu="gratuityNote">Parties of 6 or more add an 18% gratuity.</p>
       </div>
     </div>
   </section>
@@ -955,32 +823,23 @@
     </div>
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">The bar</p>
-        <h2 id="cktl-h" class="display">Cocktail <em>culture.</em></h2>
-        <p>A full lounge behind the kitchen. House builds with island rum, top-shelf bourbon, and fresh citrus, poured slow. Half off cocktails, spirits, and starters every day from 4 to 6PM.</p>
+        <p class="eyebrow" data-cocktails="eyebrow">The bar</p>
+        <h2 id="cktl-h" class="display" data-cocktails="headline">Cocktail <em>culture.</em></h2>
+        <p data-cocktails="intro">A full lounge behind the kitchen. House builds with island rum, top-shelf bourbon, and fresh citrus, poured slow. Half off cocktails, spirits, and starters every day from 4 to 6PM.</p>
       </div>
 
       <div class="cocktails__grid">
         <aside class="cocktails__aside reveal">
           <img src="assets/img/cocktail-amber.jpg" alt="An amber cocktail being poured over ice at the Flavor House bar, backlit and glowing">
-          <div class="hh">
-            <div class="k">Every day · 4 to 6PM</div>
-            <div class="v display">Happy Hour</div>
-            <p>Half off cocktails, spirits, and starters.</p>
+          <div class="hh" data-happy-hour>
+            <div class="k" data-hh="when">Every day · 4 to 6PM</div>
+            <div class="v display" data-hh="title">Happy Hour</div>
+            <p data-hh="body">Half off cocktails, spirits, and starters.</p>
           </div>
         </aside>
 
         <div class="reveal" data-d="1">
-          <ul class="cktl-list">
-            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Island Old Fashion <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="cktl__desc">Buffalo Trace, Appleton rum, demerara, bitter trio.</p></li>
-            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">That Girl <span class="fav" aria-label="House favorite">&#9733;</span></span></div><p class="cktl__desc">Woodford Reserve, amaretto, vanilla, lemon.</p></li>
-            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Side Car</span></div><p class="cktl__desc">Meukow VS, triple sec, creole shrub, lemon, albumen.</p></li>
-            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Love TKO</span></div><p class="cktl__desc">Hennessy, strawberry, lime, cane sugar.</p></li>
-            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Ain't No Woman</span></div><p class="cktl__desc">Empress gin, lavender, rosemary, honey, lemon.</p></li>
-            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Fantastic Voyage</span></div><p class="cktl__desc">Bumbu rum, RumChata, amaretto, nutmeg.</p></li>
-            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Flavor House Mule</span></div><p class="cktl__desc">Jose Cuervo Silver, strawberry, ginger beer.</p></li>
-            <li class="cktl"><div class="cktl__row"><span class="cktl__name display">Skin Tight</span></div><p class="cktl__desc">Tito's vodka, lemon, strawberry, triple sec, cane sugar.</p></li>
-          </ul>
+          <ul class="cktl-list" data-cocktail-list></ul>
         </div>
       </div>
     </div>
@@ -996,20 +855,13 @@
           <img src="assets/img/interior-dining.jpg" alt="The Flavor House dining room set with warm pendant lights and greenery, ready for a private gathering">
         </figure>
         <div class="events__copy reveal" data-d="1">
-          <p class="eyebrow">Private events &amp; catering</p>
-          <h2 id="events-h" class="display">A room for the <em>whole celebration.</em></h2>
-          <p>A connected private space, right off the main room, built for the moments worth gathering for. We handle the food, the bar, and the details, so you can be a guest at your own party.</p>
-          <ul class="events__list">
-            <li>Bridal &amp; baby showers</li>
-            <li>Receptions</li>
-            <li>Corporate mixers</li>
-            <li>Repasts</li>
-            <li>Birthday dinners</li>
-            <li>Off-site catering</li>
-          </ul>
+          <p class="eyebrow" data-events="eyebrow">Private events &amp; catering</p>
+          <h2 id="events-h" class="display" data-events="headline">A room for the <em>whole celebration.</em></h2>
+          <p data-events="body">A connected private space, right off the main room, built for the moments worth gathering for. We handle the food, the bar, and the details, so you can be a guest at your own party.</p>
+          <ul class="events__list" data-events-list></ul>
           <div class="hero__actions" style="margin-top:0;">
-            <a class="btn" href="mailto:theflavorhouse130@gmail.com?subject=Private%20Event%20Inquiry%20-%20The%20Flavor%20House">Book your event</a>
-            <a class="btn btn--ghost" href="tel:+19379994047">Call to plan</a>
+            <a class="btn" href="mailto:theflavorhouse130@gmail.com?subject=Private%20Event%20Inquiry%20-%20The%20Flavor%20House" data-email-mailto-link="Private Event Inquiry - The Flavor House">Book your event</a>
+            <a class="btn btn--ghost" href="tel:+19379994047" data-phone-tel-link>Call to plan</a>
           </div>
         </div>
       </div>
@@ -1030,31 +882,26 @@
         <div class="visit__info reveal">
           <div class="visit__block">
             <div class="lbl">Address</div>
-            <p class="addr">130 W 2nd St<br>Dayton, OH 45402</p>
-            <p class="muted" style="margin:0.4rem 0 0;font-size:0.9rem;">Downtown Dayton</p>
+            <p class="addr"><span data-address="line1">130 W 2nd St</span><br><span data-address="line2">Dayton, OH 45402</span></p>
+            <p class="muted" style="margin:0.4rem 0 0;font-size:0.9rem;" data-address="short">Downtown Dayton</p>
           </div>
 
           <div class="visit__block">
             <div class="lbl">Hours</div>
-            <ul class="hours">
-              <li><span class="d">Mon to Thu</span><span class="t">11a to 2:30p &middot; 4 to 9p</span></li>
-              <li><span class="d">Friday</span><span class="t">11a to 2:30p &middot; 4 to 10p</span></li>
-              <li><span class="d">Saturday</span><span class="t">4 to 10p</span></li>
-              <li><span class="d">Sunday</span><span class="t closed">Closed</span></li>
-            </ul>
-            <p class="muted" style="margin:0.7rem 0 0;font-size:0.85rem;">Lunch served Monday to Friday, 11am to 2:30pm.</p>
+            <ul class="hours" data-hours-list></ul>
+            <p class="muted" style="margin:0.7rem 0 0;font-size:0.85rem;" data-hours="lunchNote">Lunch served Monday to Friday, 11am to 2:30pm.</p>
           </div>
 
           <div class="visit__block">
             <div class="lbl">Contact</div>
-            <p style="margin:0 0 0.35rem;"><a href="tel:+19379994047" style="font-family:var(--ff-display);font-size:1.4rem;color:var(--gold-hi);">(937) 999-4047</a></p>
-            <p style="margin:0 0 0.35rem;"><a href="mailto:theflavorhouse130@gmail.com">theflavorhouse130@gmail.com</a></p>
-            <p style="margin:0;"><a href="https://www.instagram.com/flavorhouse130/" target="_blank" rel="noopener">@flavorhouse130 on Instagram</a></p>
+            <p style="margin:0 0 0.35rem;"><a href="tel:+19379994047" style="font-family:var(--ff-display);font-size:1.4rem;color:var(--gold-hi);" data-phone-tel-link data-phone-text>(937) 999-4047</a></p>
+            <p style="margin:0 0 0.35rem;"><a href="mailto:theflavorhouse130@gmail.com" data-email-link data-email-text>theflavorhouse130@gmail.com</a></p>
+            <p style="margin:0;"><a href="https://www.instagram.com/flavorhouse130/" target="_blank" rel="noopener" data-instagram-link>@flavorhouse130 on Instagram</a></p>
           </div>
 
           <div class="visit__ctas">
             <a class="btn" href="#reserve">Reserve a table</a>
-            <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener">Get directions</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener" data-maps-link>Get directions</a>
           </div>
         </div>
 
@@ -1062,7 +909,7 @@
           <iframe
             title="Map to The Flavor House at 130 West 2nd Street, Dayton, Ohio"
             src="https://www.google.com/maps?q=130+W+2nd+St,+Dayton,+OH+45402&amp;output=embed"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-maps-embed></iframe>
         </div>
       </div>
 
@@ -1071,9 +918,9 @@
         <div class="reserve__intro">
           <h3 class="display">Reserve a <em>table.</em></h3>
           <p>Walk-ins are always welcome. For weekends, larger parties, or a booth by the window, send a request below or call us directly and we'll take care of the rest.</p>
-          <a class="call" href="tel:+19379994047">
+          <a class="call" href="tel:+19379994047" data-phone-tel-link>
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6.5 3.5 9 8l-2 1.5a12 12 0 0 0 5.5 5.5L14 13l4.5 2.5-1 3.5a2 2 0 0 1-2.2 1.4A16.5 16.5 0 0 1 3.6 8.7 2 2 0 0 1 5 6.5z"/></svg>
-            (937) 999-4047
+            <span data-phone-text>(937) 999-4047</span>
           </a>
         </div>
 
@@ -1121,7 +968,7 @@
     <div class="foot__top">
       <div class="foot__seal">
         <img src="assets/img/fh-monogram-footer.jpg" alt="The Flavor House gold FH monogram crest">
-        <p>Caribbean, Creole, and cocktail culture in downtown Dayton. Scratch, spice, and second helpings since 2021.</p>
+        <p data-footer="tagline">Caribbean, Creole, and cocktail culture in downtown Dayton. Scratch, spice, and second helpings since 2021.</p>
       </div>
       <div class="foot__cols">
         <div class="foot__col">
@@ -1133,129 +980,25 @@
         </div>
         <div class="foot__col">
           <h4>Visit</h4>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener">130 W 2nd St<br>Dayton, OH 45402</a>
-          <a href="tel:+19379994047">(937) 999-4047</a>
-          <a href="mailto:theflavorhouse130@gmail.com">theflavorhouse130@gmail.com</a>
-          <a href="https://www.instagram.com/flavorhouse130/" target="_blank" rel="noopener">@flavorhouse130</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=130+W+2nd+St,+Dayton,+OH+45402" target="_blank" rel="noopener" data-maps-link><span data-address="line1">130 W 2nd St</span><br><span data-address="line2">Dayton, OH 45402</span></a>
+          <a href="tel:+19379994047" data-phone-tel-link data-phone-text>(937) 999-4047</a>
+          <a href="mailto:theflavorhouse130@gmail.com" data-email-link data-email-text>theflavorhouse130@gmail.com</a>
+          <a href="https://www.instagram.com/flavorhouse130/" target="_blank" rel="noopener" data-instagram-link data-instagram-text>@flavorhouse130</a>
         </div>
         <div class="foot__col">
           <h4>Hours</h4>
-          <ul class="foot__hours">
-            <li><span>Mon to Thu</span><span>11a&ndash;2:30p, 4&ndash;9p</span></li>
-            <li><span>Friday</span><span>11a&ndash;2:30p, 4&ndash;10p</span></li>
-            <li><span>Saturday</span><span>4&ndash;10p</span></li>
-            <li><span>Sunday</span><span>Closed</span></li>
-          </ul>
+          <ul class="foot__hours" data-footer-hours-list></ul>
         </div>
       </div>
     </div>
 
     <div class="foot__bottom">
       <span class="wordmark display">The Flavor <em>House</em></span>
-      <p>&copy; <span id="yr">2026</span> The Flavor House · Est. 2021 · Black-Owned · Dayton, Ohio</p>
+      <p>&copy; <span id="yr">2026</span> The Flavor House · Est. <span data-business="foundedYear">2021</span> · Black-Owned · Dayton, Ohio</p>
     </div>
   </div>
 </footer>
 
-<script>
-(function(){
-  "use strict";
-
-  /* ---------- Sticky nav state ---------- */
-  var topbar = document.getElementById('top');
-  var onScroll = function(){
-    if(window.scrollY > 40){ topbar.classList.add('is-stuck'); }
-    else{ topbar.classList.remove('is-stuck'); }
-  };
-  window.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
-
-  /* ---------- Mobile drawer ---------- */
-  var burger = document.getElementById('burger');
-  var mnav = document.getElementById('mnav');
-  var toggleNav = function(open){
-    var isOpen = (open !== undefined) ? open : burger.getAttribute('aria-expanded') !== 'true';
-    burger.setAttribute('aria-expanded', String(isOpen));
-    burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    mnav.classList.toggle('is-open', isOpen);
-    mnav.setAttribute('aria-hidden', String(!isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  };
-  burger.addEventListener('click', function(){ toggleNav(); });
-  mnav.addEventListener('click', function(e){
-    if(e.target.tagName === 'A'){ toggleNav(false); }
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && mnav.classList.contains('is-open')){ toggleNav(false); burger.focus(); }
-  });
-
-  /* ---------- Menu tabs ---------- */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-  var panels = Array.prototype.slice.call(document.querySelectorAll('.tabpanel'));
-  var selectTab = function(tab){
-    tabs.forEach(function(t){
-      var sel = (t === tab);
-      t.setAttribute('aria-selected', String(sel));
-      t.tabIndex = sel ? 0 : -1;
-    });
-    panels.forEach(function(p){
-      p.hidden = (p.getAttribute('aria-labelledby') !== tab.id);
-    });
-  };
-  tabs.forEach(function(tab, i){
-    tab.addEventListener('click', function(){ selectTab(tab); });
-    tab.addEventListener('keydown', function(e){
-      var idx = null;
-      if(e.key === 'ArrowRight'){ idx = (i + 1) % tabs.length; }
-      else if(e.key === 'ArrowLeft'){ idx = (i - 1 + tabs.length) % tabs.length; }
-      else if(e.key === 'Home'){ idx = 0; }
-      else if(e.key === 'End'){ idx = tabs.length - 1; }
-      if(idx !== null){ e.preventDefault(); selectTab(tabs[idx]); tabs[idx].focus(); }
-    });
-  });
-
-  /* ---------- Reservation form -> mailto ---------- */
-  var rform = document.getElementById('rform');
-  if(rform){
-    rform.addEventListener('submit', function(e){
-      e.preventDefault();
-      var g = function(id){ var el = document.getElementById(id); return el ? el.value : ''; };
-      var name = g('r-name') || 'Guest';
-      var body =
-        'Reservation request for The Flavor House' + '\n\n' +
-        'Name: ' + name + '\n' +
-        'Party size: ' + g('r-party') + '\n' +
-        'Date: ' + (g('r-date') || 'To confirm') + '\n' +
-        'Time: ' + (g('r-time') || 'To confirm') + '\n' +
-        'Notes: ' + (g('r-note') || 'None') + '\n';
-      var url = 'mailto:theflavorhouse130@gmail.com'
-        + '?subject=' + encodeURIComponent('Reservation Request - ' + name)
-        + '&body=' + encodeURIComponent(body);
-      window.location.href = url;
-    });
-  }
-
-  /* ---------- Year ---------- */
-  var yr = document.getElementById('yr');
-  if(yr){ yr.textContent = String(new Date().getFullYear()); }
-
-  /* ---------- Scroll reveal ---------- */
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
-  if(reduce || !('IntersectionObserver' in window)){
-    reveals.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
-    reveals.forEach(function(el){ io.observe(el); });
-  }
-})();
-</script>
+<script src="assets/js/content.js" defer></script>
 </body>
 </html>

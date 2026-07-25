@@ -1,0 +1,24 @@
+{
+  "eyebrow": "A swank environment",
+  "headlinePlain": "More than a restaurant.",
+  "headlineEmphasis": "It's a vibe.",
+  "paragraph1": "The Flavor House is where Trinidad kitchens meet a downtown Dayton corner. Scotch bonnet, green seasoning, and slow-stewed oxtail, woven through with Creole and soul-food tradition, and served in a room designed for a slow evening and a good crowd.",
+  "paragraph2": "Come for a lunch plate. Stay for a craft cocktail and real hospitality. Warm pendant light, low music, and a unique dining experience with flavorful, from-scratch food and superior service.",
+  "pillars": [
+    {
+      "kicker": "The Kitchen",
+      "title": "Caribbean & Creole",
+      "body": "Cooked from scratch. Gumbo, oxtail, rum-glazed salmon, curry roti, and Signature baked mac. No shortcuts."
+    },
+    {
+      "kicker": "The Lounge",
+      "title": "Cocktail Culture",
+      "body": "A full bar of house cocktails and top-shelf spirits. Happy Hour every day, 4 to 6PM, half off the good stuff."
+    },
+    {
+      "kicker": "The Patio & Room",
+      "title": "Cigars & Celebrations",
+      "body": "A cigar patio and a connected private room built for showers, mixers, and the whole family."
+    }
+  ]
+}

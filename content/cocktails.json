@@ -1,0 +1,21 @@
+{
+  "eyebrow": "The bar",
+  "headlinePlain": "Cocktail",
+  "headlineEmphasis": "culture.",
+  "intro": "A full lounge behind the kitchen. House builds with island rum, top-shelf bourbon, and fresh citrus, poured slow. Half off cocktails, spirits, and starters every day from 4 to 6PM.",
+  "happyHour": {
+    "when": "Every day · 4 to 6PM",
+    "title": "Happy Hour",
+    "body": "Half off cocktails, spirits, and starters."
+  },
+  "items": [
+    { "name": "Island Old Fashion", "favorite": true, "desc": "Buffalo Trace, Appleton rum, demerara, bitter trio." },
+    { "name": "That Girl", "favorite": true, "desc": "Woodford Reserve, amaretto, vanilla, lemon." },
+    { "name": "Side Car", "favorite": false, "desc": "Meukow VS, triple sec, creole shrub, lemon, albumen." },
+    { "name": "Love TKO", "favorite": false, "desc": "Hennessy, strawberry, lime, cane sugar." },
+    { "name": "Ain't No Woman", "favorite": false, "desc": "Empress gin, lavender, rosemary, honey, lemon." },
+    { "name": "Fantastic Voyage", "favorite": false, "desc": "Bumbu rum, RumChata, amaretto, nutmeg." },
+    { "name": "Flavor House Mule", "favorite": false, "desc": "Jose Cuervo Silver, strawberry, ginger beer." },
+    { "name": "Skin Tight", "favorite": false, "desc": "Tito's vodka, lemon, strawberry, triple sec, cane sugar." }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "lunchNote": "Lunch served Monday to Friday, 11am to 2:30pm.",
+  "days": [
+    { "label": "Mon to Thu", "time": "11a to 2:30p · 4 to 9p", "closed": false },
+    { "label": "Friday", "time": "11a to 2:30p · 4 to 10p", "closed": false },
+    { "label": "Saturday", "time": "4 to 10p", "closed": false },
+    { "label": "Sunday", "time": "Closed", "closed": true }
+  ]
+}

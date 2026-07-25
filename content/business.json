@@ -1,0 +1,22 @@
+{
+  "phone": "(937) 999-4047",
+  "phoneTel": "+19379994047",
+  "email": "theflavorhouse130@gmail.com",
+  "instagramHandle": "@flavorhouse130",
+  "instagramUrl": "https://www.instagram.com/flavorhouse130/",
+  "addressLine1": "130 W 2nd St",
+  "addressLine2": "Dayton, OH 45402",
+  "addressHeroLine": "130 W 2nd St, Dayton, OH",
+  "addressShort": "Downtown Dayton",
+  "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=130+W+2nd+St,+Dayton,+OH+45402",
+  "mapsEmbedUrl": "https://www.google.com/maps?q=130+W+2nd+St,+Dayton,+OH+45402&output=embed",
+  "foundedYear": "2021",
+  "trustStrip": [
+    { "text": "Est. 2021", "highlight": true },
+    { "text": "Black-Owned", "highlight": false },
+    { "text": "Trinidad-Rooted Kitchen", "highlight": false },
+    { "text": "Cocktail Lounge", "highlight": false },
+    { "text": "Cigar Patio", "highlight": false },
+    { "text": "Downtown Dayton", "highlight": true }
+  ]
+}

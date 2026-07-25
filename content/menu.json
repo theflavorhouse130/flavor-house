@@ -1,0 +1,93 @@
+{
+  "eyebrow": "The full table",
+  "headlinePlain": "The",
+  "headlineEmphasis": "menu.",
+  "intro": "Starters to sweets, greens to gumbo. Lunch is served Monday to Friday, 11am to 2:30pm, with dinner every evening.",
+  "gratuityNote": "Parties of 6 or more add an 18% gratuity.",
+  "categories": [
+    {
+      "id": "starters",
+      "label": "Starters",
+      "note": "",
+      "items": [
+        { "name": "Flavor House Rolls", "favorite": true, "price": "", "desc": "Collard greens, cabbage, and roasted chicken in an egg roll, with sweet chili dip. Veg style available." },
+        { "name": "Creamy Collard Green Dip", "favorite": true, "price": "", "desc": "A southern twist on spinach dip, served with house pita chips." },
+        { "name": "Chicken Wings", "favorite": false, "price": "", "desc": "Ten wings, any flavor: bbq, lemon pepper, hot, spicy garlic, or FH gold." },
+        { "name": "Salmon Bites", "favorite": false, "price": "", "desc": "Cajun fried salmon bites with sweet chili dip." },
+        { "name": "Southern Fried Okra", "favorite": false, "price": "", "desc": "Battered, fried, and tossed in lemon pepper." }
+      ]
+    },
+    {
+      "id": "greens",
+      "label": "Greens & Salads",
+      "note": "",
+      "items": [
+        { "name": "Cranberry Walnut Salad", "favorite": false, "price": "", "desc": "Mixed greens, feta, cucumbers, cranberries, and walnuts with raspberry vinaigrette." },
+        { "name": "Flavor House Caesar", "favorite": false, "price": "", "desc": "Romaine, parmesan, and croutons with housemade caesar." },
+        { "name": "Flavor House Salad", "favorite": false, "price": "", "desc": "Mixed greens, tomatoes, red onions, and cucumbers with housemade ranch." },
+        { "name": "Add a Protein", "favorite": false, "price": "", "desc": "Grilled chicken, shrimp, or salmon on any salad." }
+      ]
+    },
+    {
+      "id": "veg",
+      "label": "Vegetarian",
+      "note": "",
+      "items": [
+        { "name": "Portobello Dian", "favorite": true, "price": "", "desc": "Grilled portobello with onions and peppers over Caribbean rice, finished in parmesan cream sauce." },
+        { "name": "Chickpeas & Potatoes with Roti", "favorite": false, "price": "", "desc": "A curry coconut-milk stew with homemade roti. Protein available." }
+      ]
+    },
+    {
+      "id": "hand",
+      "label": "Handhelds",
+      "note": "Served with fries. Add truffle fries for a little more.",
+      "items": [
+        { "name": "Oxtail Sandwich", "favorite": true, "price": "", "desc": "Braised oxtail and dijon on toasted brioche." },
+        { "name": "Jerk Burger", "favorite": true, "price": "", "desc": "Beef, pepperjack, lettuce, onions, tomato, pickles, and Caribbean bbq on brioche." },
+        { "name": "Sweet Chili Shrimp Po' Boy", "favorite": false, "price": "", "desc": "Cajun fried shrimp, sweet chili, and lettuce on a pistolette." },
+        { "name": "Crispy Chicken Sandwich", "favorite": false, "price": "", "desc": "Cajun fried chicken, lettuce, pickle, and FH sauce on brioche." },
+        { "name": "Salmon Burger", "favorite": false, "price": "", "desc": "Grilled salmon patty, cheese, lettuce, pickles, and FH sauce on brioche." },
+        { "name": "Flavor House Burger", "favorite": false, "price": "", "desc": "Beef, cheese, lettuce, tomato, onions, pickles, and mayo on brioche." },
+        { "name": "Turkey Burger", "favorite": false, "price": "", "desc": "Turkey patty, cheese, lettuce, tomato, pickles, onions, and bourbon sauce on brioche." },
+        { "name": "Double Bourbon Burger", "favorite": false, "price": "", "desc": "Two beef patties, cheese, veg, and Kentucky bourbon sauce on brioche." },
+        { "name": "Cheesesteak", "favorite": false, "price": "", "desc": "Provolone, veg, banana peppers, and mayo on a pistolette. Chicken, beef, or salmon." }
+      ]
+    },
+    {
+      "id": "mains",
+      "label": "Mains",
+      "note": "",
+      "items": [
+        { "name": "Flavor House Gumbo", "favorite": true, "price": "", "desc": "Crab legs, chicken, andouille, shrimp, okra, onions, and peppers over Caribbean rice." },
+        { "name": "Cajun Fried Fish & Shrimp Basket", "favorite": true, "price": "", "desc": "Cajun fried fish and shrimp with fries." },
+        { "name": "Caribbean Rum Glazed Salmon", "favorite": true, "price": "", "desc": "Grilled rum-glazed salmon with garlic mash and green beans." },
+        { "name": "Chicken Fontaine", "favorite": false, "price": "", "desc": "Grilled chicken, portobello, onions, and peppers in parmesan cream over garlic mash." },
+        { "name": "Creamy Alfredo", "favorite": false, "price": "", "desc": "Fettuccine in parmesan cream with garlic bread. Chicken or shrimp." }
+      ]
+    },
+    {
+      "id": "sides",
+      "label": "Sides",
+      "note": "",
+      "items": [
+        { "name": "Signature Baked Mac & Cheese", "favorite": true, "price": "", "desc": "" },
+        { "name": "Yellow Caribbean Rice", "favorite": false, "price": "", "desc": "" },
+        { "name": "Collard Greens", "favorite": false, "price": "", "desc": "" },
+        { "name": "Garlic Mashed Potatoes", "favorite": false, "price": "", "desc": "" },
+        { "name": "Green Beans", "favorite": false, "price": "", "desc": "" },
+        { "name": "Black Beans & Rice", "favorite": false, "price": "", "desc": "" },
+        { "name": "Black Beans", "favorite": false, "price": "", "desc": "" },
+        { "name": "Fries", "favorite": false, "price": "", "desc": "Add truffle for a little more." }
+      ]
+    },
+    {
+      "id": "desserts",
+      "label": "Desserts",
+      "note": "",
+      "items": [
+        { "name": "Sweet Potato Cheesecake", "favorite": true, "price": "", "desc": "The house finish, southern and rich." },
+        { "name": "Triple Chocolate Extraordinaire", "favorite": false, "price": "", "desc": "For the deep chocolate crowd." }
+      ]
+    }
+  ]
+}

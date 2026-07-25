@@ -1,20 +1,20 @@
-# Sveltia CMS config — The Flavor House (lightweight/stopgap version)
+# Sveltia CMS config — The Flavor House
 #
 # Backend: GitHub, via our own OAuth proxy at netlify/functions/auth.js
 # (env vars OAUTH_CLIENT_ID / OAUTH_CLIENT_SECRET must be set on the Netlify project).
 # Editor account must have write access to theflavorhouse130/flavor-house.
 #
-# base_url / site_url / display_url below point at flavorhouse130.com, matching the
-# GitHub OAuth App's registered callback (https://flavorhouse130.com/.netlify/functions/
-# auth/callback — SSL confirmed live). Must always match whatever callback URL(s) are
+# base_url / site_url / display_url point at flavorhouse130.com, matching the GitHub
+# OAuth App's registered callback. Must always match whatever callback URL(s) are
 # actually registered on the OAuth App, or GitHub rejects the login with a redirect_uri
-# mismatch — the auth Function builds its callback dynamically from whatever domain it's
-# accessed through, so this value IS what gets sent to GitHub.
+# mismatch.
 #
-# ⚠️ This is the STOPGAP CMS: one raw-HTML field for the whole page, not per-section
-# fields. A bad edit here can break the page. The proper version (matching Stanford
-# Electric / Fête — structured JSON, field-by-field editing) is still a to-do, not
-# done. Don't mistake this config for that.
+# Real field-by-field editing: every collection below maps to one content/*.json file
+# that assets/js/content.js fetches and renders into the page at load time. List
+# fields (menu items, cocktails, signature dishes, event types, hours, pillars, trust
+# strip) support add/remove/reorder natively — that's what makes this a real owner
+# editor, not a raw-HTML text box. If you add a field here, add the matching render
+# code in content.js, or the field will save but never show up on the site.
 
 backend:
   name: github
@@ -31,15 +31,155 @@ display_url: https://flavorhouse130.com
 logo_url: https://flavorhouse130.com/assets/img/fh-monogram-footer.jpg
 
 collections:
-  - name: pages
-    label: Website
+  - name: business
+    label: Business Info
     files:
-      - name: home
-        label: Homepage (raw HTML — edit with care)
-        file: index.html
-        format: frontmatter
+      - name: business
+        label: Contact, Address & Trust Strip
+        file: content/business.json
         fields:
-          - name: body
-            label: Full page HTML
-            widget: text
-            hint: "This is the entire page's raw HTML. A misplaced tag can break the page — save often and check the live site after saving."
+          - { name: phone, label: "Phone (display)", widget: string, hint: "e.g. (937) 999-4047" }
+          - { name: phoneTel, label: "Phone (link)", widget: string, hint: "e.g. +19379994047 — used by Call buttons, no spaces or punctuation" }
+          - { name: email, label: Email, widget: string }
+          - { name: instagramHandle, label: "Instagram handle (display)", widget: string }
+          - { name: instagramUrl, label: Instagram URL, widget: string }
+          - { name: addressLine1, label: "Address line 1", widget: string }
+          - { name: addressLine2, label: "Address line 2 (city, state, zip)", widget: string }
+          - { name: addressHeroLine, label: "Address, one line (used in the hero)", widget: string }
+          - { name: addressShort, label: "Address, short label", widget: string, hint: "e.g. Downtown Dayton" }
+          - { name: mapsUrl, label: "Google Maps directions URL", widget: string }
+          - { name: mapsEmbedUrl, label: "Google Maps embed URL", widget: string, hint: "The src of the embedded map on the Visit section" }
+          - { name: foundedYear, label: Founded year, widget: string }
+          - name: trustStrip
+            label: "Trust strip (top banner)"
+            widget: list
+            summary: "{{fields.text}}"
+            fields:
+              - { name: text, label: Text, widget: string }
+              - { name: highlight, label: "Highlight in gold?", widget: boolean, default: false }
+
+  - name: pages
+    label: Homepage Sections
+    files:
+      - name: hero
+        label: Hero
+        file: content/hero.json
+        fields:
+          - { name: eyebrow, label: Eyebrow (small label above headline), widget: string }
+          - { name: headlinePlain, label: "Headline, first part", widget: string }
+          - { name: headlineEmphasis, label: "Headline, gold italic part", widget: string }
+          - { name: subhead, label: Subheading, widget: text }
+          - { name: metaLine, label: "Meta line (next to phone/address)", widget: string }
+
+      - name: intro
+        label: "Intro (\"More than a restaurant\")"
+        file: content/intro.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: headlinePlain, label: "Headline, first part", widget: string }
+          - { name: headlineEmphasis, label: "Headline, gold italic part", widget: string }
+          - { name: paragraph1, label: "Paragraph 1", widget: text }
+          - { name: paragraph2, label: "Paragraph 2", widget: text }
+          - name: pillars
+            label: "Three feature pillars"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: kicker, label: "Small label", widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Body text, widget: text }
+
+      - name: signatures
+        label: "Signature Dishes"
+        file: content/signatures.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: headlinePlain, label: "Headline, first part", widget: string }
+          - { name: headlineEmphasis, label: "Headline, gold italic part", widget: string }
+          - { name: intro, label: Intro text, widget: text }
+          - name: items
+            label: "Signature dishes"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: favorite, label: "House favorite? (adds a star)", widget: boolean, default: false }
+              - { name: desc, label: Description, widget: text }
+
+      - name: menu
+        label: "Full Menu"
+        file: content/menu.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: headlinePlain, label: "Headline, first part", widget: string }
+          - { name: headlineEmphasis, label: "Headline, gold italic part", widget: string }
+          - { name: intro, label: Intro text, widget: text }
+          - { name: gratuityNote, label: "Gratuity / policy note", widget: string }
+          - name: categories
+            label: "Menu categories (each becomes a tab)"
+            widget: list
+            summary: "{{fields.label}} ({{fields.items}} items)"
+            fields:
+              - { name: id, label: "ID (lowercase, no spaces)", widget: string, hint: "e.g. starters — used internally, must be unique" }
+              - { name: label, label: "Tab label", widget: string }
+              - { name: note, label: "Category note (optional, shown above the items)", widget: string, required: false }
+              - name: items
+                label: Items
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - { name: name, label: Name, widget: string }
+                  - { name: favorite, label: "House favorite? (adds a star)", widget: boolean, default: false }
+                  - { name: price, label: "Price (leave blank to hide)", widget: string, required: false }
+                  - { name: desc, label: Description, widget: text, required: false }
+
+      - name: cocktails
+        label: Cocktails
+        file: content/cocktails.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: headlinePlain, label: "Headline, first part", widget: string }
+          - { name: headlineEmphasis, label: "Headline, gold italic part", widget: string }
+          - { name: intro, label: Intro text, widget: text }
+          - name: happyHour
+            label: "Happy Hour callout"
+            widget: object
+            fields:
+              - { name: when, label: "When", widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Description, widget: string }
+          - name: items
+            label: Cocktails
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: favorite, label: "House favorite? (adds a star)", widget: boolean, default: false }
+              - { name: desc, label: "Ingredients / description", widget: text }
+
+      - name: events
+        label: "Private Events"
+        file: content/events.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: headlinePlain, label: "Headline, first part", widget: string }
+          - { name: headlineEmphasis, label: "Headline, gold italic part", widget: string }
+          - { name: body, label: Body text, widget: text }
+          - name: items
+            label: "Event types"
+            widget: list
+            field: { name: item, label: Item, widget: string }
+
+      - name: hours
+        label: "Hours"
+        file: content/hours.json
+        fields:
+          - { name: lunchNote, label: "Lunch note", widget: string }
+          - name: days
+            label: "Days & hours"
+            widget: list
+            summary: "{{fields.label}} — {{fields.time}}"
+            fields:
+              - { name: label, label: "Day(s)", widget: string, hint: "e.g. Mon to Thu, or Sunday" }
+              - { name: time, label: "Hours", widget: string, hint: "e.g. 11a to 2:30p · 4 to 9p, or Closed" }
+              - { name: closed, label: "Closed this day?", widget: boolean, default: false }
