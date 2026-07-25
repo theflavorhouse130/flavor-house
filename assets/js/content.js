@@ -304,9 +304,19 @@
 
   function wireReservationForm(business){
     var rform = document.getElementById('rform');
+    var successEl = document.getElementById('rform-success');
     if(!rform){ return; }
-    rform.addEventListener('submit', function(e){
-      e.preventDefault();
+
+    function encodeFormData(form){
+      var data = new FormData(form);
+      var params = [];
+      data.forEach(function(value, key){
+        params.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+      });
+      return params.join('&');
+    }
+
+    function mailtoFallback(){
       var g = function(id){ var el = document.getElementById(id); return el ? el.value : ''; };
       var name = g('r-name') || 'Guest';
       var body =
@@ -320,6 +330,22 @@
         + '?subject=' + encodeURIComponent('Reservation Request - ' + name)
         + '&body=' + encodeURIComponent(body);
       window.location.href = url;
+    }
+
+    rform.addEventListener('submit', function(e){
+      e.preventDefault();
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData(rform)
+      }).then(function(res){
+        if(!res.ok){ throw new Error('Form submission failed: ' + res.status); }
+        rform.hidden = true;
+        if(successEl){ successEl.hidden = false; }
+      }).catch(function(err){
+        console.error('Netlify form submission failed, falling back to email:', err);
+        mailtoFallback();
+      });
     });
   }
 

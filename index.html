@@ -924,7 +924,9 @@
           </a>
         </div>
 
-        <form class="rform" id="rform" novalidate>
+        <form class="rform" id="rform" name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="reservation">
+          <p class="full" style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
           <div>
             <label for="r-name">Name</label>
             <input id="r-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
@@ -951,8 +953,12 @@
           <div class="full">
             <button class="btn" type="submit">Send reservation request</button>
           </div>
-          <p class="full muted" style="font-size:0.78rem;margin:0.2rem 0 0;">This opens your email so you can send the request to our team. We confirm every reservation by phone or email.</p>
+          <p class="full muted" style="font-size:0.78rem;margin:0.2rem 0 0;">This sends straight to our team. We confirm every reservation by phone or email.</p>
         </form>
+        <div class="rform-success" id="rform-success" hidden style="text-align:center;padding:2rem 1rem;">
+          <h3 class="display" style="margin-bottom:0.6rem;">Request sent.</h3>
+          <p class="muted">Thanks — we'll confirm by phone or email shortly.</p>
+        </div>
       </div>
     </div>
   </section>
