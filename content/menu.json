@@ -2,7 +2,7 @@
   "eyebrow": "The full table",
   "headlinePlain": "The",
   "headlineEmphasis": "menu.",
-  "intro": "Starters to sweets, greens to gumbo. Lunch is served Monday to Friday, 11am to 2:30pm, with dinner every evening.",
+  "intro": "Starters to sweets, greens to gumbo, plus the wine, draft, and non-alcoholic list from the bar. Lunch is served Monday to Friday, 11am to 2:30pm, with dinner Monday to Saturday.",
   "gratuityNote": "Parties of 6 or more add an 18% gratuity.",
   "categories": [
     {
@@ -87,6 +87,41 @@
       "items": [
         { "name": "Sweet Potato Cheesecake", "favorite": true, "price": "", "desc": "The house finish, southern and rich." },
         { "name": "Triple Chocolate Extraordinaire", "favorite": false, "price": "", "desc": "For the deep chocolate crowd." }
+      ]
+    },
+    {
+      "id": "wines",
+      "label": "Wines",
+      "note": "",
+      "items": [
+        { "name": "Sweet Red Blends", "favorite": false, "price": "", "desc": "" },
+        { "name": "Cabernet Sauvignon", "favorite": false, "price": "", "desc": "" },
+        { "name": "Moscato", "favorite": false, "price": "", "desc": "" },
+        { "name": "Pinot Grigio", "favorite": false, "price": "", "desc": "" },
+        { "name": "Sauvignon Blanc", "favorite": false, "price": "", "desc": "" },
+        { "name": "Prosecco", "favorite": false, "price": "", "desc": "" }
+      ]
+    },
+    {
+      "id": "draft",
+      "label": "Draft Beer",
+      "note": "",
+      "items": [
+        { "name": "Michelob Ultra", "favorite": false, "price": "", "desc": "" },
+        { "name": "Samuel Adams", "favorite": false, "price": "", "desc": "" },
+        { "name": "Seasonal Summer Ale", "favorite": false, "price": "", "desc": "" },
+        { "name": "Bud Light", "favorite": false, "price": "", "desc": "" },
+        { "name": "Stella Artois", "favorite": false, "price": "", "desc": "" },
+        { "name": "Rhinegeist Truth", "favorite": false, "price": "", "desc": "" }
+      ]
+    },
+    {
+      "id": "zeroproof",
+      "label": "Non-Alcoholic",
+      "note": "",
+      "items": [
+        { "name": "Lemonade", "favorite": false, "price": "", "desc": "" },
+        { "name": "Coca-Cola, Diet Coca-Cola & Sprite", "favorite": false, "price": "", "desc": "" }
       ]
     }
   ]

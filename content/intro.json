@@ -2,8 +2,8 @@
   "eyebrow": "A swank environment",
   "headlinePlain": "More than a restaurant.",
   "headlineEmphasis": "It's a vibe.",
-  "paragraph1": "The Flavor House is where Trinidad kitchens meet a downtown Dayton corner. Scotch bonnet, green seasoning, and slow-stewed oxtail, woven through with Creole and soul-food tradition, and served in a room designed for a slow evening and a good crowd.",
-  "paragraph2": "Come for a lunch plate. Stay for a craft cocktail and real hospitality. Warm pendant light, low music, and a unique dining experience with flavorful, from-scratch food and superior service.",
+  "paragraph1": "Around here, comfort is seasoned with culture. Our Creole comfort cuisine is rooted in tradition, inspired by culture, and built with bold flavor. Every dish is prepared with care, every cocktail is handcrafted, and every visit is an invitation to gather, connect, and stay a while.",
+  "paragraph2": "From rich, soulful entrées to signature cocktails and live music in The Flavor Room, we serve more than a meal. Whether you are discovering us for the first time or coming back again, there is always a seat waiting for you. Come for the flavor. Stay for the experience.",
   "pillars": [
     {
       "kicker": "The Kitchen",
@@ -11,14 +11,14 @@
       "body": "Cooked from scratch. Gumbo, oxtail, rum-glazed salmon, curry roti, and Signature baked mac. No shortcuts."
     },
     {
-      "kicker": "The Lounge",
+      "kicker": "The Bar",
       "title": "Cocktail Culture",
-      "body": "A full bar of house cocktails and top-shelf spirits. Happy Hour every day, 4 to 6PM, half off the good stuff."
+      "body": "A full bar of house cocktails and top-shelf spirits. Happy Hour Monday to Friday, 4 to 6PM, half off the good stuff."
     },
     {
-      "kicker": "The Patio & Room",
-      "title": "Cigars & Celebrations",
-      "body": "A cigar patio and a connected private room built for showers, mixers, and the whole family."
+      "kicker": "The Flavor Room",
+      "title": "Live Music, Up Close",
+      "body": "Our former private room is now The Flavor House's live-music home, an intimate space built for real sets and real connection. New look coming soon."
     }
   ]
 }
