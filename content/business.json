@@ -4,6 +4,7 @@
   "email": "theflavorhouse130@gmail.com",
   "instagramHandle": "@flavorhouse130",
   "instagramUrl": "https://www.instagram.com/flavorhouse130/",
+  "yelpReservationsUrl": "https://www.yelp.com/reservations/flavor-house-dayton",
   "addressLine1": "130 W 2nd St",
   "addressLine2": "Dayton, OH 45402",
   "addressHeroLine": "130 W 2nd St, Dayton, OH",
@@ -14,7 +15,7 @@
   "trustStrip": [
     { "text": "Est. 2021", "highlight": true },
     { "text": "Black-Owned", "highlight": false },
-    { "text": "Trinidad-Rooted Kitchen", "highlight": false },
+    { "text": "Scratch Kitchen", "highlight": false },
     { "text": "Full Bar", "highlight": false },
     { "text": "The Flavor Room", "highlight": false },
     { "text": "Downtown Dayton", "highlight": true }

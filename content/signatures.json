@@ -5,7 +5,7 @@
   "intro": "A handful of the dishes regulars come back for, and the ones that keep the foodie tastings talking. Every plate is built from scratch, spiced with intent, and portioned for second helpings. Chef specials rotate regularly, ask your server what's featured today.",
   "items": [
     { "name": "Flavor House Gumbo", "favorite": true, "desc": "Crab legs, chicken, andouille, shrimp, and okra with onions and peppers, ladled over yellow Caribbean rice." },
-    { "name": "Oxtail Sandwich", "favorite": true, "desc": "Slow-braised oxtail and dijon on toasted brioche, served with fries. The Trinidad classic, handheld." },
+    { "name": "Oxtail Sandwich", "favorite": true, "desc": "Slow-braised oxtail and dijon on toasted brioche, served with fries. A house classic, handheld." },
     { "name": "Caribbean Rum Glazed Salmon", "favorite": true, "desc": "Grilled rum-glazed salmon over garlic mash with green beans. Sweet heat, clean finish." },
     { "name": "Portobello Dian", "favorite": true, "desc": "Grilled portobello with onions and peppers over Caribbean rice, finished in parmesan cream. The vegetarian showpiece." }
   ]

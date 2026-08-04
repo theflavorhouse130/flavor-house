@@ -43,6 +43,7 @@ collections:
           - { name: email, label: Email, widget: string }
           - { name: instagramHandle, label: "Instagram handle (display)", widget: string }
           - { name: instagramUrl, label: Instagram URL, widget: string }
+          - { name: yelpReservationsUrl, label: "Yelp reservations URL", widget: string, hint: "Where the Reserve on Yelp button goes" }
           - { name: addressLine1, label: "Address line 1", widget: string }
           - { name: addressLine2, label: "Address line 2 (city, state, zip)", widget: string }
           - { name: addressHeroLine, label: "Address, one line (used in the hero)", widget: string }
@@ -169,6 +170,17 @@ collections:
             label: "Event types"
             widget: list
             field: { name: item, label: Item, widget: string }
+
+      - name: reservations
+        label: "Reservations"
+        file: content/reservations.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: headlinePlain, label: "Headline, first part", widget: string }
+          - { name: headlineEmphasis, label: "Headline, gold italic part", widget: string }
+          - { name: body, label: Body text, widget: text }
+          - { name: ctaLabel, label: "Button label", widget: string, hint: "The link itself is set under Business Info, Yelp reservations URL" }
+          - { name: callNote, label: "Note above the phone number", widget: string }
 
       - name: hours
         label: "Hours"

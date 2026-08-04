@@ -48,6 +48,7 @@
     });
     document.querySelectorAll('[data-instagram-link]').forEach(function(a){ a.href = b.instagramUrl; });
     setText('[data-instagram-text]', b.instagramHandle);
+    document.querySelectorAll('[data-yelp-link]').forEach(function(a){ a.href = b.yelpReservationsUrl; });
     document.querySelectorAll('[data-maps-link]').forEach(function(a){ a.href = b.mapsUrl; });
     document.querySelectorAll('[data-maps-embed]').forEach(function(el){ el.src = b.mapsEmbedUrl; });
     setText('[data-address="line1"]', b.addressLine1);
@@ -189,6 +190,16 @@
   }
 
   /* ---------- Private events ---------- */
+  function renderReservations(res){
+    var eyebrow = document.querySelector('[data-reservations="eyebrow"]');
+    if(eyebrow){ eyebrow.textContent = res.eyebrow; }
+    var headline = document.querySelector('[data-reservations="headline"]');
+    if(headline){ headline.innerHTML = esc(res.headlinePlain) + ' <em>' + esc(res.headlineEmphasis) + '</em>'; }
+    setText('[data-reservations="body"]', res.body);
+    setText('[data-reservations="ctaLabel"]', res.ctaLabel);
+    setText('[data-reservations="callNote"]', res.callNote);
+  }
+
   function renderEvents(events){
     var eyebrow = document.querySelector('[data-events="eyebrow"]');
     if(eyebrow){ eyebrow.textContent = events.eyebrow; }
@@ -335,11 +346,12 @@
     fetchJSON('content/cocktails.json'),
     fetchJSON('content/events.json'),
     fetchJSON('content/hours.json'),
-    fetchJSON('content/images.json')
+    fetchJSON('content/images.json'),
+    fetchJSON('content/reservations.json')
   ]).then(function(results){
     var business = results[0], hero = results[1], intro = results[2], signatures = results[3],
         menu = results[4], cocktails = results[5], events = results[6], hours = results[7],
-        images = results[8];
+        images = results[8], reservations = results[9];
 
     applyBusinessInfo(business);
     renderHero(hero);
@@ -348,6 +360,7 @@
     renderMenu(menu);
     renderCocktails(cocktails);
     renderEvents(events);
+    renderReservations(reservations);
     renderHours(hours);
     renderImages(images);
 
