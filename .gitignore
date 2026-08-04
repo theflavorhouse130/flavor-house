@@ -1,0 +1,8 @@
+# Local hero comparison harness. Loads index.html and injects alternate hero
+# treatments so they can be compared side by side on localhost. It is a review
+# tool only and must never reach the live site.
+hero-lab.html
+hero-lab.css
+hero-lab.js
+
+.DS_Store

@@ -2,20 +2,20 @@
   "eyebrow": "The bar",
   "headlinePlain": "Cocktail",
   "headlineEmphasis": "culture.",
-  "intro": "A full lounge behind the kitchen. House builds with island rum, top-shelf bourbon, and fresh citrus, poured slow. Half off cocktails, spirits, and starters every day from 4 to 6PM.",
+  "intro": "A full bar behind the kitchen. House builds with island rum, top-shelf bourbon, and fresh citrus, poured slow. Half off cocktails, spirits, and starters Monday to Friday from 4 to 6PM. We're revamping our cocktail menu, new builds coming soon.",
   "happyHour": {
-    "when": "Every day · 4 to 6PM",
+    "when": "Monday to Friday · 4 to 6PM",
     "title": "Happy Hour",
     "body": "Half off cocktails, spirits, and starters."
   },
   "items": [
-    { "name": "Island Old Fashion", "favorite": true, "desc": "Buffalo Trace, Appleton rum, demerara, bitter trio." },
-    { "name": "That Girl", "favorite": true, "desc": "Woodford Reserve, amaretto, vanilla, lemon." },
-    { "name": "Side Car", "favorite": false, "desc": "Meukow VS, triple sec, creole shrub, lemon, albumen." },
-    { "name": "Love TKO", "favorite": false, "desc": "Hennessy, strawberry, lime, cane sugar." },
+    { "name": "Painkiller", "favorite": false, "desc": "Appleton rum, coconut cream, pineapple, fresh squeezed OJ." },
     { "name": "Ain't No Woman", "favorite": false, "desc": "Empress gin, lavender, rosemary, honey, lemon." },
-    { "name": "Fantastic Voyage", "favorite": false, "desc": "Bumbu rum, RumChata, amaretto, nutmeg." },
-    { "name": "Flavor House Mule", "favorite": false, "desc": "Jose Cuervo Silver, strawberry, ginger beer." },
-    { "name": "Skin Tight", "favorite": false, "desc": "Tito's vodka, lemon, strawberry, triple sec, cane sugar." }
+    { "name": "Love TKO", "favorite": false, "desc": "Hennessy, strawberry, lime, cane sugar." },
+    { "name": "French 75", "favorite": false, "desc": "Bombay Sapphire, lemon, sugar cane." },
+    { "name": "Side Car", "favorite": false, "desc": "Meukow VS, triple sec, creole shrub, lemon, albumen." },
+    { "name": "Magnolia Mule", "favorite": false, "desc": "Woodford Reserve, peach, mint, ginger beer." },
+    { "name": "Flavor Room", "favorite": true, "desc": "Remy Martin, blackberry, elderflower, champagne." },
+    { "name": "Island Old Fashion", "favorite": true, "desc": "Buffalo Trace, Appleton rum, demerara sugar, bitter trio." }
   ]
 }

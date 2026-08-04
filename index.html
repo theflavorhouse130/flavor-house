@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Flavor House · Caribbean, Creole & Cocktail Culture in Dayton</title>
-<meta name="description" content="An upscale Caribbean and Creole kitchen, cocktail lounge, and private event space in the heart of downtown Dayton. Scratch cooking, spice, and second helpings since 2021.">
+<title>The Flavor House · Welcome Home, Dayton</title>
+<meta name="description" content="Caribbean and Creole comfort cuisine, a full bar, and live music at The Flavor Room, in the heart of downtown Dayton. Scratch cooking since 2021.">
 <link rel="canonical" href="https://flavorhouse130.com/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -282,6 +282,87 @@
     color:var(--taupe); display:flex; flex-direction:column; align-items:center; gap:0.6rem;
   }
   .scroll-cue span{ display:block; width:1px; height:34px; background:linear-gradient(var(--brass),transparent); }
+
+  /* ---- Framed hero (desktop) --------------------------------
+     The hero footage is a 9:16 phone reel. Stretched across a wide
+     hero it has to be blown up ~2x and cropped to a narrow band, which
+     is what made it look soft and stretched. From 900px up we stop
+     using it as wallpaper and stand it up at its native aspect ratio
+     instead: no crop, no upscale, so it renders sharper than full
+     bleed ever did. Below 900px the reel already fits the viewport,
+     so the full-bleed treatment above is left exactly as it was.
+     ---------------------------------------------------------- */
+  .hero__backdrop{ display:none; }
+  .hero__credit{ display:none; }
+
+  @media (min-width:900px){
+    .hero{
+      align-items:center;
+      --hero-vh: min(78svh, 620px);
+      --hero-vw: calc(var(--hero-vh) * 9 / 16);
+      --hero-gap: 3.25rem;
+      /* right edge of the frame lines up with the right edge of .wrap's content box */
+      --hero-right: max(var(--gutter), calc((100% - var(--maxw)) / 2 + var(--gutter)));
+    }
+
+    /* Quiet backdrop so the frame is the only thing moving.
+       data-image="heroPoster" keeps this in step with the CMS. */
+    .hero__backdrop{
+      display:block; position:absolute; inset:0; z-index:-3;
+      width:100%; height:100%; object-fit:cover; object-position:center;
+      filter:brightness(0.28) saturate(0.75);
+    }
+
+    .hero__media{
+      inset:auto; right:var(--hero-right); top:50%; translate:0 -50%;
+      height:var(--hero-vh); width:var(--hero-vw);
+      z-index:1;                       /* above .hero__scrim, so the frame stays clean */
+      border-radius:26px; overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:0 42px 92px -28px rgba(0,0,0,0.92),
+                 0 0 0 1px rgba(230,185,92,0.10);
+    }
+    .hero__media::after{
+      content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+      box-shadow:inset 0 0 0 1px rgba(239,230,214,0.07),
+                 inset 0 -90px 80px -60px rgba(8,6,4,0.8);
+    }
+
+    .hero__credit{
+      display:block; position:absolute; z-index:2;
+      right:calc(var(--hero-right) + var(--hero-vw) - 2.25rem);
+      top:calc(50% + var(--hero-vh) / 2 - 1.5rem);
+      translate:0 -50%;
+      background:var(--char-1); border:1px solid var(--line);
+      padding:0.6rem 1rem; border-radius:3px;
+      font-family:var(--ff-ui); font-size:0.64rem; letter-spacing:0.22em;
+      text-transform:uppercase; color:var(--brass);
+      box-shadow:0 18px 40px -18px rgba(0,0,0,0.9);
+      white-space:nowrap;
+      transition:color .18s ease, border-color .18s ease;
+    }
+    .hero__credit:hover{ color:var(--gold-hi); border-color:var(--brass); }
+
+    /* keep the copy clear of the frame */
+    .hero__inner{
+      padding-right:calc(var(--hero-vw) + var(--hero-gap));
+      padding-bottom:clamp(2rem,4vw,3rem);
+    }
+    /* 15ch keeps "Welcome home," whole on the first line; below that it
+       breaks mid-phrase as "Welcome / home, Dayton." */
+    .hero h1{ font-size:clamp(2.6rem, 1.2rem + 5.4vw, 4.5rem); max-width:15ch; }
+    .hero__sub{ max-width:40ch; }
+    .hero__meta{ max-width:none; }
+
+    /* backdrop is already dark, so a lighter scrim keeps it from going muddy */
+    .hero__scrim{
+      background:
+        linear-gradient(180deg, rgba(8,6,4,0.62) 0%, rgba(8,6,4,0.34) 40%, rgba(8,6,4,0.72) 100%),
+        radial-gradient(90% 90% at 12% 55%, rgba(13,10,7,0.92) 0%, transparent 62%);
+    }
+
+    .scroll-cue{ left:calc(var(--gutter) + 0.5rem); transform:none; }
+  }
 
   /* ============================================================
      MARQUEE / TRUST STRIP
@@ -653,7 +734,6 @@
         <li><a href="#signatures">Signatures</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#cocktails">Cocktails</a></li>
-        <li><a href="#events">Events</a></li>
         <li><a href="#visit">Visit</a></li>
       </ul>
       <div class="nav__cta">
@@ -674,7 +754,6 @@
   <a href="#signatures">Signatures</a>
   <a href="#menu">Menu</a>
   <a href="#cocktails">Cocktails</a>
-  <a href="#events">Events</a>
   <a href="#visit">Visit</a>
   <div class="mnav__cta">
     <a class="btn" href="tel:+19379994047" data-phone-tel-link>Call <span data-phone-text>(937) 999-4047</span></a>
@@ -687,13 +766,17 @@
        2 · HERO
        ============================================================ -->
   <section class="hero" aria-label="Welcome to The Flavor House">
+    <img class="hero__backdrop" src="assets/img/hero-flavorhouse-dinner-poster.jpg" alt=""
+         aria-hidden="true" data-image="heroPoster">
     <div class="hero__media">
       <video autoplay muted loop playsinline preload="metadata"
-             poster="assets/img/hero-dining-poster.jpg"
+             poster="assets/img/hero-flavorhouse-dinner-poster.jpg"
              aria-hidden="true" data-video="heroVideo" data-video-poster="heroPoster">
-        <source src="assets/video/hero-dining.mp4" type="video/mp4">
+        <source src="assets/video/hero-flavorhouse-dinner.mp4" type="video/mp4">
       </video>
     </div>
+    <a class="hero__credit" href="https://www.instagram.com/flavorhouse130/" target="_blank"
+       rel="noopener" data-instagram-link><span data-instagram-text>@flavorhouse130</span></a>
     <div class="hero__scrim" aria-hidden="true"></div>
 
     <div class="wrap hero__inner">
@@ -734,7 +817,7 @@
           <p data-intro="paragraph2">Come for a lunch plate. Stay for a craft cocktail and real hospitality. Warm pendant light, low music, and a unique dining experience with flavorful, from-scratch food and superior service.</p>
         </div>
         <figure class="intro__media reveal" data-d="1">
-          <img src="assets/img/interior-window.jpg" alt="A host in a white blazer standing by tall downtown windows in the warm, candlelit dining room of The Flavor House" data-image="introPhoto">
+          <img src="assets/img/interior-bar-gathering.jpg" alt="Guests gathered at The Flavor House bar under black pendant lights, with balloons overhead and the marble bar top glowing blue" data-image="introPhoto">
           <div class="intro__badge">
             <div class="n">130</div>
             <div class="t">W 2nd St · Downtown Dayton</div>
@@ -845,27 +928,10 @@
   </section>
 
   <!-- ============================================================
-       9 · PRIVATE EVENTS & CATERING
+       9 · PRIVATE EVENTS & CATERING — hidden 2026-07-29 pending Flavor
+       Room photography; content/events.json and its CMS collection are
+       left in place so this can be reinstated once new photos are in.
        ============================================================ -->
-  <section class="section events" id="events" aria-labelledby="events-h">
-    <div class="wrap">
-      <div class="events__grid">
-        <figure class="events__media reveal">
-          <img src="assets/img/interior-dining.jpg" alt="The Flavor House dining room set with warm pendant lights and greenery, ready for a private gathering" data-image="eventsPhoto">
-        </figure>
-        <div class="events__copy reveal" data-d="1">
-          <p class="eyebrow" data-events="eyebrow">Private events &amp; catering</p>
-          <h2 id="events-h" class="display" data-events="headline">A room for the <em>whole celebration.</em></h2>
-          <p data-events="body">A connected private space, right off the main room, built for the moments worth gathering for. We handle the food, the bar, and the details, so you can be a guest at your own party.</p>
-          <ul class="events__list" data-events-list></ul>
-          <div class="hero__actions" style="margin-top:0;">
-            <a class="btn" href="mailto:theflavorhouse130@gmail.com?subject=Private%20Event%20Inquiry%20-%20The%20Flavor%20House" data-email-mailto-link="Private Event Inquiry - The Flavor House">Book your event</a>
-            <a class="btn btn--ghost" href="tel:+19379994047" data-phone-tel-link>Call to plan</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================================================
        10 · VISIT + RESERVE
@@ -916,7 +982,7 @@
       <div class="reserve reveal" id="reserve" style="grid-template-columns:1fr; max-width:640px; margin-inline:auto; text-align:center;">
         <div class="reserve__intro">
           <h3 class="display">Come as you <em>are.</em></h3>
-          <p>Walk-ins are always welcome, no reservation needed. For larger parties or any questions, give us a call.</p>
+          <p>Walk-ins are always welcome, no reservation needed. For parties of six or more, give us a call to reserve and we'll take care of the rest.</p>
           <a class="call" href="tel:+19379994047" data-phone-tel-link style="justify-content:center;">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6.5 3.5 9 8l-2 1.5a12 12 0 0 0 5.5 5.5L14 13l4.5 2.5-1 3.5a2 2 0 0 1-2.2 1.4A16.5 16.5 0 0 1 3.6 8.7 2 2 0 0 1 5 6.5z"/></svg>
             <span data-phone-text>(937) 999-4047</span>
@@ -937,7 +1003,7 @@
     <div class="foot__top">
       <div class="foot__seal">
         <img src="assets/img/fh-monogram-footer.jpg" alt="The Flavor House gold FH monogram crest" data-image="footerLogo">
-        <p data-footer="tagline">Caribbean, Creole, and cocktail culture in downtown Dayton. Scratch, spice, and second helpings since 2021.</p>
+        <p data-footer="tagline">Caribbean and Creole comfort cuisine in the heart of downtown Dayton, since 2021. Welcome home.</p>
       </div>
       <div class="foot__cols">
         <div class="foot__col">
@@ -945,7 +1011,6 @@
           <a href="#signatures">Signatures</a>
           <a href="#menu">Full menu</a>
           <a href="#cocktails">Cocktails</a>
-          <a href="#events">Private events</a>
         </div>
         <div class="foot__col">
           <h4>Visit</h4>
