@@ -978,12 +978,15 @@
         </div>
       </div>
 
-      <!-- RESERVATIONS (booking runs through Yelp; walk-ins still welcome) -->
+      <!-- RESERVATIONS (parties of six or more, booked through Yelp; walk-ins
+           otherwise). The Yelp link carries ?covers=6 so the booking widget
+           opens already set to a six top. Both the copy and the URL are CMS
+           fields, so the party-size rule can change without a code change. -->
       <div class="reserve reveal" id="reserve" style="grid-template-columns:1fr; max-width:640px; margin-inline:auto; text-align:center;">
         <div class="reserve__intro">
           <p class="eyebrow center" data-reservations="eyebrow" style="margin-bottom:1.1rem;">Reservations</p>
-          <h3 class="display" data-reservations="headline">Save your <em>seat.</em></h3>
-          <p data-reservations="body">Book a table through Yelp in a few taps. Walk-ins are always welcome, and for parties of six or more we recommend reserving ahead.</p>
+          <h3 class="display" data-reservations="headline">For the bigger <em>table.</em></h3>
+          <p data-reservations="body">Reservations for parties of six or more go through Yelp. Smaller tables never need one, so walk in whenever you like.</p>
           <div class="hero__actions" style="justify-content:center;">
             <a class="btn" href="https://www.yelp.com/reservations/flavor-house-dayton" target="_blank"
                rel="noopener" data-yelp-link data-reservations="ctaLabel">Reserve on Yelp</a>
