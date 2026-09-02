@@ -1,10 +1,25 @@
 {
   "heroPoster": {
-    "src": "assets/img/hero-flavorhouse-dinner-poster.jpg"
+    "src": "assets/img/hero-backdrop-bar.jpg"
   },
-  "heroVideo": {
-    "src": "assets/video/hero-flavorhouse-dinner.mp4"
-  },
+  "heroSlides": [
+    {
+      "src": "assets/img/hero-rasta-pasta.jpg",
+      "alt": "Rasta Pasta: penne and shrimp in a seasoned parmesan cream sauce"
+    },
+    {
+      "src": "assets/img/hero-fish-basket.jpg",
+      "alt": "Cajun Fried Fish and Shrimp Basket with seasoned fries over greens"
+    },
+    {
+      "src": "assets/img/hero-cocktail-red.jpg",
+      "alt": "A deep red cocktail over ice in a snifter on the marble bar"
+    },
+    {
+      "src": "assets/img/hero-bar-stools.jpg",
+      "alt": "Leather stools along the marble bar at The Flavor House"
+    }
+  ],
   "introPhoto": {
     "src": "assets/img/interior-bar-marble.jpg",
     "alt": "The Flavor House bar in daylight: a marble-topped counter with leather stools, black pendant lights, a wall-mounted wine rack, and the back bar shelves against white subway tile"
@@ -15,7 +30,7 @@
   },
   "signatureTile1Photo": {
     "src": "assets/img/plate-shrimp-penne.jpg",
-    "alt": "Penne and shrimp in a seasoned parmesan cream sauce with diced tomato and parsley, on a gold-rimmed plate"
+    "alt": "Rasta Pasta: penne and shrimp in a seasoned parmesan cream sauce with diced tomato and parsley, on a gold-rimmed plate"
   },
   "signatureTile2Photo": {
     "src": "assets/img/table-spread.jpg",
