@@ -286,6 +286,38 @@
   }
   .scroll-cue span{ display:block; width:1px; height:34px; background:linear-gradient(var(--brass),transparent); }
 
+  /* ---- Stacked hero (phones and small tablets) ---------------
+     Below 900px the slides used to run full-bleed behind the copy,
+     which worked for the dark Instagram reel. The Julian Cook plates
+     are bright, so the copy sat on golden fries. Now the photo is a
+     card on top and the copy sits on the espresso background below,
+     with the photo fading into it. No scrim needed.
+     ---------------------------------------------------------- */
+  @media (max-width:899.98px){
+    .hero{ min-height:auto; display:block; }
+    .hero__media{
+      position:relative; inset:auto; z-index:0;
+      height:min(62svh, 540px);
+    }
+    .hero__media::before,.hero__media::after{
+      content:""; position:absolute; left:0; right:0; pointer-events:none; z-index:1;
+    }
+    /* top fade keeps the fixed top bar (wordmark, phone, menu) readable on a bright plate */
+    .hero__media::before{
+      top:0; height:26%;
+      background:linear-gradient(180deg, rgba(13,10,7,0.86) 0%, rgba(13,10,7,0.35) 55%, rgba(13,10,7,0) 100%);
+    }
+    .hero__media::after{
+      bottom:0; height:42%;
+      background:linear-gradient(180deg, rgba(13,10,7,0) 0%, var(--espresso) 100%);
+    }
+    .hero__scrim{ display:none; }
+    .hero__inner{ padding-top:0.5rem; margin-top:-3rem; position:relative; z-index:1; }
+    .hero__eyebrow{ letter-spacing:0.28em; }
+    .hero h1{ text-shadow:none; }
+    .scroll-cue{ display:none; }
+  }
+
   /* ---- Framed hero (desktop) --------------------------------
      From 900px up the hero media stands in a framed 3:4 card on the
      right instead of being stretched as wallpaper. It was a 9:16 phone
