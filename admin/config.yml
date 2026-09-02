@@ -226,13 +226,13 @@ collections:
               - { name: src, label: Photo, widget: image }
               - { name: alt, label: "Alt text", widget: string, required: false }
           - name: signatureTile1Photo
-            label: "Signature Dishes — small photo 1 (\"Rasta Pasta\" tile)"
+            label: "Signature Dishes — small photo 1 (\"Fish & Shrimp Basket\" tile)"
             widget: object
             fields:
               - { name: src, label: Photo, widget: image }
               - { name: alt, label: "Alt text", widget: string, required: false }
           - name: signatureTile2Photo
-            label: "Signature Dishes — small photo 2 (\"Family-Style Spreads\" tile)"
+            label: "Signature Dishes — small photo 2 (\"Handcrafted Cocktails\" tile)"
             widget: object
             fields:
               - { name: src, label: Photo, widget: image }
