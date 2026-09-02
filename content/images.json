@@ -1,13 +1,41 @@
 {
-  "heroPoster": { "src": "assets/img/hero-flavorhouse-dinner-poster.jpg" },
-  "heroVideo": { "src": "assets/video/hero-flavorhouse-dinner.mp4" },
-  "introPhoto": { "src": "assets/img/interior-bar-gathering.jpg", "alt": "Guests gathered at The Flavor House bar under black pendant lights, with balloons overhead and the marble bar top glowing blue" },
-  "signatureMainPhoto": { "src": "assets/img/plate-hearty.jpg", "alt": "A hearty plate of sliced, seasoned meat fanned over golden Caribbean rice, finished with a parmesan cream sauce" },
-  "signatureTile1Photo": { "src": "assets/img/plate-signature.jpg", "alt": "A signature plate of grilled protein over rice with a rich cream sauce" },
-  "signatureTile2Photo": { "src": "assets/img/table-spread.jpg", "alt": "An overhead spread of six Flavor House dishes showing the range of the menu" },
-  "cocktailsBgPoster": { "src": "assets/img/cocktail-bar-poster.jpg" },
-  "cocktailsBgVideo": { "src": "assets/video/cocktail-bar.mp4" },
-  "cocktailsPhoto": { "src": "assets/img/cocktail-amber.jpg", "alt": "An amber cocktail being poured over ice at the Flavor House bar, backlit and glowing" },
-  "eventsPhoto": { "src": "assets/img/interior-dining.jpg", "alt": "The Flavor House dining room set with warm pendant lights and greenery, ready for a private gathering" },
-  "footerLogo": { "src": "assets/img/fh-monogram-footer.jpg" }
+  "heroPoster": {
+    "src": "assets/img/hero-flavorhouse-dinner-poster.jpg"
+  },
+  "heroVideo": {
+    "src": "assets/video/hero-flavorhouse-dinner.mp4"
+  },
+  "introPhoto": {
+    "src": "assets/img/interior-bar-marble.jpg",
+    "alt": "The Flavor House bar in daylight: a marble-topped counter with leather stools, black pendant lights, a wall-mounted wine rack, and the back bar shelves against white subway tile"
+  },
+  "signatureMainPhoto": {
+    "src": "assets/img/plate-fish-shrimp-basket.jpg",
+    "alt": "The Cajun Fried Fish and Shrimp Basket: cornmeal-crusted fried fish and shrimp over mixed greens with seasoned fries, on a gold-rimmed plate on the marble bar"
+  },
+  "signatureTile1Photo": {
+    "src": "assets/img/plate-shrimp-penne.jpg",
+    "alt": "Penne and shrimp in a seasoned parmesan cream sauce with diced tomato and parsley, on a gold-rimmed plate"
+  },
+  "signatureTile2Photo": {
+    "src": "assets/img/table-spread.jpg",
+    "alt": "An overhead spread of six Flavor House dishes showing the range of the menu"
+  },
+  "cocktailsBgPoster": {
+    "src": "assets/img/cocktail-bar-poster.jpg"
+  },
+  "cocktailsBgVideo": {
+    "src": "assets/video/cocktail-bar.mp4"
+  },
+  "cocktailsPhoto": {
+    "src": "assets/img/cocktail-nutmeg-up.jpg",
+    "alt": "A pale, frothy cocktail served up in a martini glass and dusted with nutmeg, on the marble bar with the back bar softly out of focus"
+  },
+  "eventsPhoto": {
+    "src": "assets/img/lounge-checkerboard.jpg",
+    "alt": "The Flavor House lounge: velvet armchairs in green, blush, and teal on a black-and-white checkerboard floor, patterned wallpaper, and a crystal chandelier overhead"
+  },
+  "footerLogo": {
+    "src": "assets/img/fh-monogram-footer.jpg"
+  }
 }

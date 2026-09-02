@@ -224,7 +224,7 @@ collections:
               - { name: src, label: Photo, widget: image }
               - { name: alt, label: "Alt text", widget: string, required: false }
           - name: signatureTile1Photo
-            label: "Signature Dishes — small photo 1 (\"Chicken Fontaine\" tile)"
+            label: "Signature Dishes — small photo 1 (\"Creamy Shrimp Penne\" tile)"
             widget: object
             fields:
               - { name: src, label: Photo, widget: image }
