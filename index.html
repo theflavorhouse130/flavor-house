@@ -245,14 +245,17 @@
     overflow:hidden; isolation:isolate;
   }
   .hero__media{ position:absolute; inset:0; z-index:-2; }
-  .hero__media video,.hero__media img{
+  .hero__media img{
     width:100%; height:100%; object-fit:cover; object-position:center;
   }
+  /* Photo carousel: slides stack, one is visible, JS crossfades them. */
+  .hero__slide{ position:absolute; inset:0; opacity:0; transition:opacity 1.4s ease; }
+  .hero__slide.is-active{ opacity:1; }
   .hero__scrim{
     position:absolute; inset:0; z-index:-1;
     background:
-      linear-gradient(180deg, rgba(8,6,4,0.55) 0%, rgba(8,6,4,0.08) 32%, rgba(8,6,4,0.55) 74%, rgba(8,6,4,0.95) 100%),
-      radial-gradient(120% 80% at 20% 100%, rgba(13,10,7,0.85) 0%, transparent 60%);
+      linear-gradient(180deg, rgba(8,6,4,0.62) 0%, rgba(8,6,4,0.30) 30%, rgba(8,6,4,0.78) 62%, rgba(8,6,4,0.97) 100%),
+      radial-gradient(120% 80% at 20% 100%, rgba(13,10,7,0.88) 0%, transparent 62%);
   }
   .hero__inner{ padding-bottom:clamp(3.5rem,8vw,7rem); padding-top:9rem; width:100%; }
   .hero__eyebrow{ margin-bottom:clamp(1.4rem,3vw,2.2rem); flex-wrap:wrap; }
@@ -283,14 +286,44 @@
   }
   .scroll-cue span{ display:block; width:1px; height:34px; background:linear-gradient(var(--brass),transparent); }
 
+  /* ---- Stacked hero (phones and small tablets) ---------------
+     Below 900px the slides used to run full-bleed behind the copy,
+     which worked for the dark Instagram reel. The Julian Cook plates
+     are bright, so the copy sat on golden fries. Now the photo is a
+     card on top and the copy sits on the espresso background below,
+     with the photo fading into it. No scrim needed.
+     ---------------------------------------------------------- */
+  @media (max-width:899.98px){
+    .hero{ min-height:auto; display:block; }
+    .hero__media{
+      position:relative; inset:auto; z-index:0;
+      height:min(62svh, 540px);
+    }
+    .hero__media::before,.hero__media::after{
+      content:""; position:absolute; left:0; right:0; pointer-events:none; z-index:1;
+    }
+    /* top fade keeps the fixed top bar (wordmark, phone, menu) readable on a bright plate */
+    .hero__media::before{
+      top:0; height:26%;
+      background:linear-gradient(180deg, rgba(13,10,7,0.86) 0%, rgba(13,10,7,0.35) 55%, rgba(13,10,7,0) 100%);
+    }
+    .hero__media::after{
+      bottom:0; height:42%;
+      background:linear-gradient(180deg, rgba(13,10,7,0) 0%, var(--espresso) 100%);
+    }
+    .hero__scrim{ display:none; }
+    .hero__inner{ padding-top:0.5rem; margin-top:-3rem; position:relative; z-index:1; }
+    .hero__eyebrow{ letter-spacing:0.28em; }
+    .hero h1{ text-shadow:none; }
+    .scroll-cue{ display:none; }
+  }
+
   /* ---- Framed hero (desktop) --------------------------------
-     The hero footage is a 9:16 phone reel. Stretched across a wide
-     hero it has to be blown up ~2x and cropped to a narrow band, which
-     is what made it look soft and stretched. From 900px up we stop
-     using it as wallpaper and stand it up at its native aspect ratio
-     instead: no crop, no upscale, so it renders sharper than full
-     bleed ever did. Below 900px the reel already fits the viewport,
-     so the full-bleed treatment above is left exactly as it was.
+     From 900px up the hero media stands in a framed 3:4 card on the
+     right instead of being stretched as wallpaper. It was a 9:16 phone
+     reel until 2026-09-02; it is now a crossfading carousel of the
+     Julian Cook photos, cropped 3:4 so a plate fills the card. Below
+     900px the slides run full-bleed behind the copy, as the reel did.
      ---------------------------------------------------------- */
   .hero__backdrop{ display:none; }
   .hero__credit{ display:none; }
@@ -299,7 +332,7 @@
     .hero{
       align-items:center;
       --hero-vh: min(78svh, 620px);
-      --hero-vw: calc(var(--hero-vh) * 9 / 16);
+      --hero-vw: calc(var(--hero-vh) * 3 / 4);
       --hero-gap: 3.25rem;
       /* right edge of the frame lines up with the right edge of .wrap's content box */
       --hero-right: max(var(--gutter), calc((100% - var(--maxw)) / 2 + var(--gutter)));
@@ -734,6 +767,7 @@
         <li><a href="#signatures">Signatures</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#cocktails">Cocktails</a></li>
+        <li><a href="#events">Events</a></li>
         <li><a href="#visit">Visit</a></li>
         <li><a href="#reserve">Reserve</a></li>
       </ul>
@@ -755,6 +789,7 @@
   <a href="#signatures">Signatures</a>
   <a href="#menu">Menu</a>
   <a href="#cocktails">Cocktails</a>
+  <a href="#events">Events</a>
   <a href="#visit">Visit</a>
   <a href="#reserve">Reserve</a>
   <div class="mnav__cta">
@@ -768,14 +803,15 @@
        2 · HERO
        ============================================================ -->
   <section class="hero" aria-label="Welcome to The Flavor House">
-    <img class="hero__backdrop" src="assets/img/hero-flavorhouse-dinner-poster.jpg" alt=""
+    <img class="hero__backdrop" src="assets/img/hero-backdrop-bar.jpg" alt=""
          aria-hidden="true" data-image="heroPoster">
-    <div class="hero__media">
-      <video autoplay muted loop playsinline preload="metadata"
-             poster="assets/img/hero-flavorhouse-dinner-poster.jpg"
-             aria-hidden="true" data-video="heroVideo" data-video-poster="heroPoster">
-        <source src="assets/video/hero-flavorhouse-dinner.mp4" type="video/mp4">
-      </video>
+    <!-- Slides come from content/images.json (heroSlides); these four are the
+         same list, in place so the first frame paints before the JSON loads. -->
+    <div class="hero__media" data-hero-slides aria-hidden="true">
+      <img class="hero__slide is-active" src="assets/img/hero-rasta-pasta.jpg" alt="" fetchpriority="high">
+      <img class="hero__slide" src="assets/img/hero-fish-basket.jpg" alt="">
+      <img class="hero__slide" src="assets/img/hero-cocktail-red.jpg" alt="">
+      <img class="hero__slide" src="assets/img/hero-bar-stools.jpg" alt="">
     </div>
     <a class="hero__credit" href="https://www.instagram.com/flavorhouse130/" target="_blank"
        rel="noopener" data-instagram-link><span data-instagram-text>@flavorhouse130</span></a>
@@ -819,7 +855,7 @@
           <p data-intro="paragraph2">From rich, soulful entrées to signature cocktails and live music in The Flavor Room, we serve more than a meal. Whether you are discovering us for the first time or coming back again, there is always a seat waiting for you. Come for the flavor. Stay for the experience.</p>
         </div>
         <figure class="intro__media reveal" data-d="1">
-          <img src="assets/img/interior-bar-gathering.jpg" alt="Guests gathered at The Flavor House bar under black pendant lights, with balloons overhead and the marble bar top glowing blue" data-image="introPhoto">
+          <img src="assets/img/interior-bar-marble.jpg" alt="The Flavor House bar in daylight: a marble-topped counter with leather stools, black pendant lights, a wall-mounted wine rack, and the back bar shelves against white subway tile" data-image="introPhoto">
           <div class="intro__badge">
             <div class="n">130</div>
             <div class="t">W 2nd St · Downtown Dayton</div>
@@ -844,8 +880,8 @@
 
       <div class="sig__grid">
         <figure class="sig__figure reveal">
-          <img src="assets/img/plate-hearty.jpg" alt="A hearty plate of sliced, seasoned meat fanned over golden Caribbean rice, finished with a parmesan cream sauce" data-image="signatureMainPhoto">
-          <figcaption>House Signature · Over Caribbean rice</figcaption>
+          <img src="assets/img/plate-rasta-pasta.jpg" alt="Rasta Pasta: penne and shrimp in a seasoned parmesan cream sauce with diced tomato and parsley, on a gold-rimmed plate on the marble bar" data-image="signatureMainPhoto">
+          <figcaption>House Favorite · Rasta Pasta</figcaption>
         </figure>
 
         <ul class="sig__list reveal" data-d="1" data-sig-list></ul>
@@ -858,17 +894,17 @@
 
       <div class="sig__second reveal">
         <figure class="sig__tile">
-          <img src="assets/img/plate-signature.jpg" alt="A signature plate of grilled protein over rice with a rich cream sauce" data-image="signatureTile1Photo">
+          <img src="assets/img/plate-fish-basket-tile.jpg" alt="The Cajun Fried Fish and Shrimp Basket: cornmeal-crusted fried fish and shrimp over mixed greens with seasoned fries" data-image="signatureTile1Photo">
           <figcaption>
-            <div class="kk">Plated with care</div>
-            <div class="nn display">Chicken Fontaine</div>
+            <div class="kk">Cajun fried</div>
+            <div class="nn display">Fish &amp; Shrimp Basket</div>
           </figcaption>
         </figure>
         <figure class="sig__tile">
-          <img src="assets/img/table-spread.jpg" alt="An overhead spread of six Flavor House dishes showing the range of the menu" data-image="signatureTile2Photo">
+          <img src="assets/img/cocktail-red-snifter.jpg" alt="A deep red cocktail over ice in a snifter on the marble bar, the back bar softly out of focus" data-image="signatureTile2Photo">
           <figcaption>
-            <div class="kk">Bring the whole table</div>
-            <div class="nn display">Family-Style Spreads</div>
+            <div class="kk">From the bar</div>
+            <div class="nn display">Handcrafted Cocktails</div>
           </figcaption>
         </figure>
       </div>
@@ -914,7 +950,7 @@
 
       <div class="cocktails__grid">
         <aside class="cocktails__aside reveal">
-          <img src="assets/img/cocktail-amber.jpg" alt="An amber cocktail being poured over ice at the Flavor House bar, backlit and glowing" data-image="cocktailsPhoto">
+          <img src="assets/img/cocktail-nutmeg-up.jpg" alt="A pale, frothy cocktail served up in a martini glass and dusted with nutmeg, on the marble bar with the back bar softly out of focus" data-image="cocktailsPhoto">
           <div class="hh" data-happy-hour>
             <div class="k" data-hh="when">Every day · 4 to 6PM</div>
             <div class="v display" data-hh="title">Happy Hour</div>
@@ -930,10 +966,28 @@
   </section>
 
   <!-- ============================================================
-       9 · PRIVATE EVENTS & CATERING — hidden 2026-07-29 pending Flavor
-       Room photography; content/events.json and its CMS collection are
-       left in place so this can be reinstated once new photos are in.
+       9 · PRIVATE EVENTS & CATERING — reinstated 2026-09-02 with the
+       Julian Cook photography (hidden 2026-07-29 pending these photos).
        ============================================================ -->
+  <section class="section events" id="events" aria-labelledby="events-h">
+    <div class="wrap">
+      <div class="events__grid">
+        <figure class="events__media reveal">
+          <img src="assets/img/lounge-checkerboard.jpg" alt="The Flavor House lounge: velvet armchairs in green, blush, and teal on a black-and-white checkerboard floor, patterned wallpaper, and a crystal chandelier overhead" data-image="eventsPhoto">
+        </figure>
+        <div class="events__copy reveal" data-d="1">
+          <p class="eyebrow" data-events="eyebrow">Private events &amp; catering</p>
+          <h2 id="events-h" class="display" data-events="headline">A room for the <em>whole celebration.</em></h2>
+          <p data-events="body">A connected private space, right off the main room, built for the moments worth gathering for. We handle the food, the bar, and the details, so you can be a guest at your own party.</p>
+          <ul class="events__list" data-events-list></ul>
+          <div class="hero__actions" style="margin-top:0;">
+            <a class="btn" href="mailto:theflavorhouse130@gmail.com?subject=Private%20Event%20Inquiry%20-%20The%20Flavor%20House" data-email-mailto-link="Private Event Inquiry - The Flavor House">Book your event</a>
+            <a class="btn btn--ghost" href="tel:+19379994047" data-phone-tel-link>Call to plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============================================================
        10 · VISIT + RESERVE
@@ -1022,6 +1076,7 @@
           <a href="#signatures">Signatures</a>
           <a href="#menu">Full menu</a>
           <a href="#cocktails">Cocktails</a>
+          <a href="#events">Private events</a>
         </div>
         <div class="foot__col">
           <h4>Visit</h4>

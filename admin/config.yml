@@ -201,16 +201,18 @@ collections:
         file: content/images.json
         fields:
           - name: heroPoster
-            label: "Hero background photo"
+            label: "Hero backdrop photo (dimmed, behind everything on desktop)"
             widget: object
             fields:
               - { name: src, label: Photo, widget: image }
-          - name: heroVideo
-            label: "Hero background video (optional, plays over the photo above)"
-            widget: object
-            hint: "Changing this replaces the moving background behind the homepage headline. Watch the whole clip before uploading — check it doesn't show anything that contradicts what the site says (e.g. events or programming you don't actually run)."
+          - name: heroSlides
+            label: "Hero photo carousel"
+            widget: list
+            summary: "{{fields.alt}}"
+            hint: "The framed photos next to the headline. They crossfade in this order, about every 5 seconds. Upright (portrait) photos look best; 3 to 5 photos is plenty. Drag to reorder."
             fields:
-              - { name: src, label: Video file, widget: file }
+              - { name: src, label: Photo, widget: image }
+              - { name: alt, label: "What's in the photo (a few words)", widget: string, required: false }
           - name: introPhoto
             label: "\"More than a restaurant\" section photo"
             widget: object
@@ -224,13 +226,13 @@ collections:
               - { name: src, label: Photo, widget: image }
               - { name: alt, label: "Alt text", widget: string, required: false }
           - name: signatureTile1Photo
-            label: "Signature Dishes — small photo 1 (\"Chicken Fontaine\" tile)"
+            label: "Signature Dishes — small photo 1 (\"Fish & Shrimp Basket\" tile)"
             widget: object
             fields:
               - { name: src, label: Photo, widget: image }
               - { name: alt, label: "Alt text", widget: string, required: false }
           - name: signatureTile2Photo
-            label: "Signature Dishes — small photo 2 (\"Family-Style Spreads\" tile)"
+            label: "Signature Dishes — small photo 2 (\"Handcrafted Cocktails\" tile)"
             widget: object
             fields:
               - { name: src, label: Photo, widget: image }
